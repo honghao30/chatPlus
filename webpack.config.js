@@ -12,7 +12,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         // use: ["style-loader", "css-loader"],
         use: [MiniCssExtractPlugin.loader, "css-loader", 'sass-loader'],
       },
@@ -31,14 +31,7 @@ module.exports = {
       },       
       filename: './index.html',
     }),
-    new HtmlWebpackPlugin({
-      template: "./src/main.html",
-      inject: 'body',
-      minify: {
-        collapseWhitespace: false
-      },       
-      filename: './main.html',
-    }),
+
 
     new MiniCssExtractPlugin({
       filename: "common.css",

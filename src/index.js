@@ -1,6 +1,8 @@
 // import { hello, add } from "./util";
 import "./style.scss";
 import "./ui.js";
+import "./Swiper.js"; 
+
 //import "./header.css";
 import List from "./List";
 import logo from "./images/angma.jpg";
