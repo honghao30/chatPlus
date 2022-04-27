@@ -9,11 +9,15 @@
 </head>
 <body>
     <div id="root">
+        <div id="accessibility">
+            <a href="#gnb">주 메뉴 바로가기</a>
+            <a href="#content">본문 바로가기</a>            
+        </div>
         <div class="header">
-            <h1>My code</h1>
-            <nav class="gnb__list--wrap">
+            <h1><a href="#" title="메인 페이지">My code</a></h1>
+            <nav class="gnb__list--wrap" id="gnb">
                 <ul class="gnb__list">
-                    <li><a href="#">표준 마크업</a></li>  
+                    <li><a href="#">마크업 컨벤션</a></li>  
                     <li><a href="#">소스 자료실</a>
                         <div class="sub-nav__wrap">
                             <ul>
@@ -47,16 +51,20 @@
               <div class="swiper cmp-swiper"> 
                   <div class="swiper-wrapper">
                       <div class="swiper-slide">
-                         <img src="./media/v1.jpg" alt="">                                                                                                        
+                         <img src="https://github.com/honghao30/mycode/blob/main/media/v1.jpg?raw=true" class="pc-only" alt="">                                                                                                        
+                         <img src="https://github.com/honghao30/mycode/blob/main/media/v1_m.jpg?raw=true" class="mo-only"   alt="">     
                       </div>
                       <div class="swiper-slide">
-                        <img src="./media/v2.jpg" alt="">                                                                                                        
+                        <img src="https://github.com/honghao30/mycode/blob/main/media/v2.jpg?raw=true" class="pc-only" alt="">                                                                                                        
+                        <img src="https://github.com/honghao30/mycode/blob/main/media/v2_m.jpg?raw=true" class="mo-only"  alt="">    
                      </div>         
                      <div class="swiper-slide">
-                        <img src="./media/v3.jpg" alt="">                                                                                                        
+                        <img src="https://github.com/honghao30/mycode/blob/main/media/v3.jpg?raw=true" class="pc-only" alt="">  
+                        <img src="https://github.com/honghao30/mycode/blob/main/media/v3_m.jpg?raw=true" class="mo-only"  alt="">                                                                                                          
                      </div>   
                      <div class="swiper-slide">
-                        <img src="./media/v4.jpg" alt="">                                                                                                        
+                        <img src="https://github.com/honghao30/mycode/blob/main/media/v4.jpg?raw=true" class="pc-only" alt="">                                                                                                        
+                        <img src="https://github.com/honghao30/mycode/blob/main/media/v4_m.jpg?raw=true" class="mo-only" alt=""> 
                      </div>                                                                                           
                   </div>
                   <div class="swiper-pagination"></div>
@@ -64,16 +72,41 @@
           </div>
           
         </div>
-        <div class="contents scroll-enter fade-in">
-            <div class="section scroll-enter fade-in">
-
+        <div id="content">
+            <div class="content__section scroll-enter fade-in">
+                <div class="section__tit">
+                    <h3></h3>내 코드는
+                    <p>
+                        빠르게 변화하는 기술과 온라인 환경 고객의 다양한 요구를 빠르고 유연하게<br>
+대응하기 위해서 공부하고 또 공부해야 한다. 그래서 공부의 기록을 위한 공간이다.
+                    </p>
+                </div>
+                <ul class="biz__list">
+                    <li>반응형 웹</li>
+                    <li>웹 접근성</li>
+                    <li>UI 스크립트</li>
+                </ul>
             </div>
-            <div class="section scroll-enter fade-in">
-                
-            </div>            
+            <div class="content__section scroll-enter fade-in">
+                <div class="video__wrap">
+                    <video muted autoplay loop>
+                        <source src="https://github.com/honghao30/mycode/blob/main/media/" type="video/mp4">
+                        <strong>Your browser does not support the video tag.</strong>
+                      </video>                    
+                </div>
+            </div>           
+            <div class="content__section scroll-enter fade-in">
+                <div class="section__tit small-type">
+                    Contact
+                </div>
+                <div class="context__wrap">                    
+			        Contact us at  <br>
+                    angelcode02@gmail.com
+                </div>
+            </div>                  
         </div>
         <div class="footer">
-
+            COPYRIGHT 2022 YELLOW-FINGER. ALL RIGHTS RESERVED.
         </div>
     </div>        
 </body>
