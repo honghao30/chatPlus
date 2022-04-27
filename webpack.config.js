@@ -20,7 +20,6 @@ module.exports = {
       {
         test: /\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
         //use: ["file-loader"],
-
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
@@ -38,6 +37,14 @@ module.exports = {
       },       
       filename: './index.html',
     }),
+    // new HtmlWebpackPlugin({
+    //   template: "./main.html",
+    //   inject: 'body',
+    //   minify: {
+    //     collapseWhitespace: false
+    //   },       
+    //   filename: './html/main.html',
+    // }),    
     new MiniCssExtractPlugin({
       filename: "common.css",
     }),

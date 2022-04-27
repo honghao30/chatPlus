@@ -1,11 +1,11 @@
 // import { hello, add } from "./util";
 import "./style.scss";
-import "./ui.js";
+import "./js/ui.js";
 import "./Swiper.js"; 
 
 //import "./header.css";
-import List from "./List";
-import logo from "./images/angma.jpg";
+// import List from "./List";
+// import logo from "./images/angma.jpg";
 
 // const text = hello("<h1>나는 코딩앙마!!~~</h1>");
 // const num = add(1, 2);
