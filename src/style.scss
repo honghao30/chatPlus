@@ -115,6 +115,22 @@
   }    
 }
 
+.full-image__wrap {
+  position: relative;
+  .teaser-text {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    color:#fff;
+  }
+  img {
+    width:100%;
+  }  
+}
+
+
+
 .notice-list-dot {
     margin-top: 40px;    
     li {
@@ -156,6 +172,7 @@
     }
   }
   
+
 
   .pc_only {
     display: block;
