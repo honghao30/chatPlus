@@ -37,14 +37,14 @@ module.exports = {
       },       
       filename: './index.html',
     }),
-    // new HtmlWebpackPlugin({
-    //   template: "./main.html",
-    //   inject: 'body',
-    //   minify: {
-    //     collapseWhitespace: false
-    //   },       
-    //   filename: './html/main.html',
-    // }),    
+    new HtmlWebpackPlugin({
+      template: "./src/html/wa.html",
+      inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },       
+      filename: './html/wa.html',
+    }),    
     new MiniCssExtractPlugin({
       filename: "common.css",
     }),
