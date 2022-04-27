@@ -2,9 +2,10 @@ import Swiper, { Navigation, Pagination, Scrollbar, Autoplay} from 'swiper';
 
 // import Swiper styles
 import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-
-new Swiper('.swiper-wrapper', {
+new Swiper('.swiper.cmp-swiper', {
     modules: [Navigation, Pagination, Scrollbar,Autoplay],
     speed: 500,
     loop: true,
