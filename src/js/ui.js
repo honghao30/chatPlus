@@ -23,6 +23,7 @@ if(keyvisual){
         if(event.target.tagName == "A" && event.target.className == "hasDepth"){
             const naviItemList = event.target.parentElement;
             const gnbDepthHandler = [header,naviItemList,document.body];
+            console.log(event.target.tagName);
             if(naviItemList.classList.contains("is-active")){                
                 closeElements(...gnbDepthHandler);                     
             }
