@@ -36,13 +36,33 @@ ScrollEnterMain();
 
 ///// === 스크롤 모션
 // 위 아래 구분을 위한 스크립트
-if (Yoffset > lastScrollTop){
-    // downscroll code      
-    console.log('내려가나')   
+let lastScrollTop = 0; 
+window.addEventListener('scroll',scrollEventManage);
+
+function scrollEventManage(){
+    const Yoffset = window.pageYOffset || document.documentElement.scrollTop; 
+    const header = document.querySelector(".header");    
+    const keyvisual = document.querySelector(".key-visual");
     
-} else {
-    // upscroll code
-    console.log('올라가나');
+    if (Yoffset > lastScrollTop){
+        // downscroll code      
+        header.classList.remove('fixed')           
+        console.log('내려가나',Yoffset)   
+        
+    } else {
+        // upscroll code
+        console.log('올라가나');
+        if(keyvisual){
+            const keyviHeight = keyvisual.offsetHeight * 0.7;
+            if(Yoffset >= keyviHeight){
+                header.classList.add('fixed')
+            }else {
+                header.classList.remove('fixed')
+            }         
+        }
+    
+    }
+    lastScrollTop = Yoffset <= 0 ? 0 : Yoffset; 
+    // 위 아래 구분을 위한 스크립트====================
 }
-lastScrollTop = Yoffset <= 0 ? 0 : Yoffset; 
-// 위 아래 구분을 위한 스크립트====================
+
