@@ -7,7 +7,8 @@ if(keyvisual){
 
 class GnbList {
     constructor() {        
-        this.navList = document.querySelectorAll('.gnb__list--wrap li > a');        
+        this.navList = document.querySelectorAll('.gnb__list > li'); 
+        this.mobutton = document.querySelector('.mobile-menu');       
         this.listeners();
     }
     listeners() {  
@@ -16,13 +17,20 @@ class GnbList {
         });       
         this.navList.forEach( el => {
             el.addEventListener( 'mouseleave', this.gnbhide, false );
-        });         
+        }); 
+        this.mobutton.addEventListener('click',this.toggleMo,false);
     }
     gnbshow(el){
-        this.parentElement.classList.add('is-active');
+        this.classList.add('is-active');
     }
     gnbhide(el){
-        this.parentElement.classList.remove('is-active');
+        this.classList.remove('is-active');
+    }
+    toggleMo(){
+        const moGnbStage = document.querySelector('.header');
+        this.classList.toggle('is-active');
+        document.body.classList.toggle('is-active');
+        moGnbStage.classList.toggle('is-active');
     }
 }
 new GnbList();
