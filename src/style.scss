@@ -9,20 +9,20 @@
 // 공통 css
 body{
   &.is-active {
-    &::after {
-      content: '';
-      display: block;
-      width:100%;
-      height:100%;
-      position: fixed;
-      left:0;
-      top:0;
-      background-color: rgba(5,20,31,0.8);
-      z-index: 10;
-      @media #{$tablet}{
-        display: none;
-      }
-    }      
+    // &::after {
+    //   content: '';
+    //   display: block;
+    //   width:100%;
+    //   height:100%;
+    //   position: fixed;
+    //   left:0;
+    //   top:0;
+    //   background-color: rgba(5,20,31,0.8);
+    //   z-index: 10;
+    //   @media #{$tablet}{
+    //     display: none;
+    //   }
+    // }      
     @media #{$tablet}{
       overflow: auto;
       height:100%;
@@ -71,7 +71,7 @@ body{
     h1 {
       color: $midnight-black-70;
     }
-    .gnbitem a {
+    > .gnbitem > a {
       color: $midnight-black-70;
     }
   }
@@ -81,7 +81,8 @@ body{
   }
   .gnb__list {
     display: flex;   
-    li {
+    > li {
+        position: relative;
       a {
         position: relative;
         @include fontoption(20px,#fff,normal);
@@ -94,20 +95,29 @@ body{
           display: block;
           position: absolute;
           left: 0;
-          height: 120px;
+          height: auto;
           top: auto;
           width: 100%;
           border-top: 1px solid $city-grey-25;
-          background-color: #fff;
+          background-color: $midnight-black-60;
+          a {
+            color:$polar-white;
+            &:hover {
+              color:$midnight-black-70;
+            }
+          }
         }
       }
       .sub-nav__wrap{
-        padding: 40px 30px;        
+        padding: 15px 0px;        
         ul {
-          display: flex;
-          justify-content: flex-end;
+           display: block;
           a {
-            @include fontoption(16px,$midnight-black-70,normal);
+            @include fontoption(15px,$midnight-black-70,normal);
+            padding:5px 20px;
+            &:hover {
+              background-color: $city-grey-20;
+            }
           }
         }
       }
