@@ -66,3 +66,8 @@ function scrollEventManage(){
     // 위 아래 구분을 위한 스크립트====================
 }
 
+//비주얼 모션
+const keyvisual = document.querySelector('.key-visual');
+if(keyvisual){
+    const keyHeight = keyvisual.clientHeight;
+}
