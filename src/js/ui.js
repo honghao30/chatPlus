@@ -7,31 +7,30 @@ if(keyvisual){
 
 class GnbList {
     constructor() {        
-        this.navList = document.querySelectorAll('.gnb__list--wrap li > a');        
-        this.target = null;
-        this.firstChild = null;
-        this.lastChild = null;
-
-        this.active = 'gnb-active';
+        this.navList = document.querySelectorAll('.gnb__list > li'); 
+        this.mobutton = document.querySelector('.mobile-menu');       
+        this.listeners();
     }
-    
-    init() {
-        this.navLi.map(elm => {
-            this.target = this.navList;
-            this.mouseEvent();
-        });
+    listeners() {  
+        this.navList.forEach( el => {
+            el.addEventListener( 'mouseenter', this.gnbshow, false );
+        });       
+        this.navList.forEach( el => {
+            el.addEventListener( 'mouseleave', this.gnbhide, false );
+        }); 
+        this.mobutton.addEventListener('click',this.toggleMo,false);
     }
-    mouseEvent(){
-        this.target.addEventListener('mouseenter',(e) => this.eventHandleer(e));
-        this.target.addEventListener('mouseleave',(e) => this.eventHandleer(e));
+    gnbshow(el){
+        this.classList.add('is-active');
     }
-    eventHandleer(e){
-        console.log(this.target)
-        let type = e.type;
-        // this.firstChild = e.target.firstElementChild;
-        // this.lastChild = e.target.lastElementchild;                
-
-        // (type == 'mouseenter') ? this.open() : this.close();
+    gnbhide(el){
+        this.classList.remove('is-active');
+    }
+    toggleMo(){
+        const moGnbStage = document.querySelector('.header');
+        this.classList.toggle('is-active');
+        document.body.classList.toggle('is-active');
+        moGnbStage.classList.toggle('is-active');
     }
 }
 new GnbList();

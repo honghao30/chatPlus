@@ -10,7 +10,7 @@ new Swiper('.swiper.cmp-swiper', {
     speed: 500,
     loop: true,
     autoplay: {
-        delay: 4000,
+        delay: 5000,
         disableOnInteraction: true // 쓸어 넘기거나 버튼 클릭 시 자동 슬라이드 정지.
     },      
     pagination: {

@@ -58,6 +58,10 @@ body{
     position: fixed !important;
     background-color: rgba(0,0,0,0.6);
     height:70px;
+    @media #{$phone}{      
+      height: 100%;  
+      background-color: rgba(0,0,0,0.6);    
+    }
     h1 {
       margin-top: 10px;
     }
@@ -68,6 +72,23 @@ body{
   &.is-active {
     background-color: #fff;
     position: fixed !important;
+    @media #{$phone}{
+      background-color:$midnight-black-100;   
+      height: 100%; 
+      z-index: 20;
+      .gnb__list--wrap {
+        display: block;
+        position: fixed;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        ul {
+          display: block;
+          text-align: center;
+          width:100%;
+        }
+      }
+    }
     h1 {
       color: $midnight-black-70;
     }
@@ -78,6 +99,9 @@ body{
   .gnb__list--wrap {    
     margin-right: 20px;
     padding-top: 15px;
+    @media #{$phone}{
+      display: none;
+    }     
   }
   .gnb__list {
     display: flex;   
@@ -100,8 +124,15 @@ body{
           width: 100%;
           border-top: 1px solid $city-grey-25;
           background-color: $midnight-black-60;
+          @media #{$phone}{
+            position: relative;
+
+          }
           a {
             color:$polar-white;
+            @media #{$phone}{
+              padding:4px 0;
+            }
             &:hover {
               color:$midnight-black-70;
             }
@@ -109,7 +140,7 @@ body{
         }
       }
       .sub-nav__wrap{
-        padding: 15px 0px;        
+        padding: 15px 0px;       
         ul {
            display: block;
           a {
@@ -132,10 +163,18 @@ body{
   position: relative;
   display: none;
   width: 24px;
-  height: 24px;      
+  height: 24px;
+  @media #{$phone}{
+    display: block;
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 45px;
+    z-index: 10;    
+  }      
   &.is-active {
     display: block;
-    .bar {          
+    .bar {                
       &.top {           
         transform: rotate(-45deg);
         top: 11px;
@@ -152,6 +191,7 @@ body{
     position: absolute;
     width: 18px;
     height: 2px;        
+    background-color: $polar-white;
     &.top {          
       top: 7px;
       left: 3px;
@@ -172,18 +212,30 @@ body{
   width: 100%;
   height: 1080px;
   overflow: hidden;
+  @media #{$phone}{
+    height:640px;
+  }
   .swiper-slide {
+    .slider-img {
+      height:1080px;
+      @media #{$phone}{
+        height: 640px;
+        background-size: cover !important;
+      }
+    }
     img {
       width:100%;
     }
   }
   .visual-infor__text {
     position: absolute;
+    text-align: center;
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
-    @include fontoption(40px,#fff,normal);
+    @include fontoption(48px,#fff,normal);
     z-index: 11;
+    opacity: 0;
   }
 }
 
@@ -194,6 +246,50 @@ body{
       padding:90px 0 0;
   }    
 
+}
+
+.footer {
+  background-color: $footer-back;
+  padding:50px 20px;
+  @include fontoption(15px,$footer-txt,normal);;
+}
+
+.swiper-pagination {
+  bottom:0px;
+  .swiper-pagination-bullet  {
+    border-radius: 0;
+  }
+  button{
+      width:5px;
+      height:5px;
+      background: $city-grey-50;        
+      border-radius: 16px;   
+      transition:all 0.3s;      
+      &.swiper-pagination-bullet-active {
+        background: $polar-white;
+        width:60px;
+      }
+  }
+  .swiper-pagination-bullet-active:after{
+      height:4px;
+  }
+  @media #{$tablet}{
+   //    bottom:64px;
+       button{
+           &:after{
+               display:none;
+           }
+           &.swiper-pagination-bullet-active{               
+               width: 48px;   
+               height:5px;          
+               border-radius: 9px;   
+               transition:all 0.3s;
+               &:after{
+                   display:none;
+               }
+           }
+       }
+   }
 }
 
 .section__tit {
@@ -240,6 +336,7 @@ body{
     top:50%;
     transform: translate(-50%,-50%);
     color:#fff;
+    font-size: 50px;
   }
   img {
     width:100%;
