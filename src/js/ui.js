@@ -8,21 +8,30 @@ if(keyvisual){
 class GnbList {
     constructor() {        
         this.navList = document.querySelectorAll('.gnb__list--wrap li > a');        
-        this.listeners();
+        this.target = null;
+        this.firstChild = null;
+        this.lastChild = null;
+
+        this.active = 'gnb-active';
     }
-    listeners() {  
-        this.navList.forEach( el => {
-            el.addEventListener( 'mouseenter', this.gnbshow, false );
-        });       
-        this.navList.forEach( el => {
-            el.addEventListener( 'mouseleave', this.gnbhide, false );
-        });         
+    
+    init() {
+        this.navLi.map(elm => {
+            this.target = this.navList;
+            this.mouseEvent();
+        });
     }
-    gnbshow(el){
-        this.parentElement.classList.add('is-active');
+    mouseEvent(){
+        this.target.addEventListener('mouseenter',(e) => this.eventHandleer(e));
+        this.target.addEventListener('mouseleave',(e) => this.eventHandleer(e));
     }
-    gnbhide(el){
-        this.parentElement.classList.remove('is-active');
+    eventHandleer(e){
+        console.log(this.target)
+        let type = e.type;
+        // this.firstChild = e.target.firstElementChild;
+        // this.lastChild = e.target.lastElementchild;                
+
+        // (type == 'mouseenter') ? this.open() : this.close();
     }
 }
 new GnbList();
