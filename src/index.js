@@ -2,7 +2,8 @@
 import "./style.scss";
 import "./js/ui.js";
 import "./js/scroll.js";
-import "./Swiper.js"; 
+import "./Swiper.js";
+//import "./js/scroll_ani";
 
 //import "./header.css";
 // import List from "./List";

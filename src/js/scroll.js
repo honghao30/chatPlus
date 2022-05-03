@@ -65,27 +65,3 @@ function scrollEventManage(){
     lastScrollTop = Yoffset <= 0 ? 0 : Yoffset;
     // 위 아래 구분을 위한 스크립트====================
 }
-
-//비주얼 모션
-const keyvisual = document.querySelector('.key-visual');
-if(keyvisual){
-    const keyHeight = keyvisual.clientHeight;
-    const keyoffTop = keyvisual.offsetTop;
-    const keyScroHt = keyHeight * 4;
-    const keyTotal = keyScroHt + keyoffTop;
-    keyvisual.style.height = keyScroHt + "px";
-    const keyviRadio = keyTotal * 100;
-    const scrollPercentage = (keyvisual.keyoffTop + keyvisual.clientHeight) / keyvisual.scrollHeight;
-    console.log(keyviRadio,scrollPercentage);
-
-
-    // window.addEventListener('scroll', function (event) {
-    //     let {scrollTop, scrollHeight, clientHeight} = event.target.scrollingElement;
-
-    //     let contentHeight = scrollHeight - clientHeight;
-    //     let ratio = (scrollTop / contentHeight) * 100;
-
-    //     scrollBar.style.transform = `translateX(-${100 - ratio}%)`;
-    //     scrollBar.style.transition = 'transform 0.5 ease-out';
-    // })
-}

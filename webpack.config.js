@@ -23,8 +23,8 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: 'assets/'          
-        }        
+          outputPath: 'assets/'
+        }
       },
     ],
   },
@@ -34,7 +34,7 @@ module.exports = {
       inject: 'body',
       minify: {
         collapseWhitespace: false
-      },       
+      },
       filename: './index.html',
     }),
     new HtmlWebpackPlugin({
@@ -42,9 +42,25 @@ module.exports = {
       inject: 'body',
       minify: {
         collapseWhitespace: false
-      },       
+      },
       filename: './html/wa.html',
-    }),    
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/html/wa_tip.html",
+      inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/wa_tip.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/html/js_tab.html",
+      inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/js_tab.html',
+    }),
     new MiniCssExtractPlugin({
       filename: "common.css",
     }),
