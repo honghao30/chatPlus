@@ -5,7 +5,7 @@
 #accessibility a{overflow:hidden;display:block;position:absolute;top:0;left:0;z-index:100;width:1px;height:1px;background:#000;color:#fff;text-align:center}
 #accessibility a:focus,.skip a:active{position:relative;width:100%;height:auto;padding:10px}
 
- 
+
 // 공통 css
 body{
   &.is-active {
@@ -22,13 +22,13 @@ body{
     //   @media #{$tablet}{
     //     display: none;
     //   }
-    // }      
+    // }
     @media #{$tablet}{
       overflow: auto;
       height:100%;
-      overflow: hidden;    
-    } 
-  } 
+      overflow: hidden;
+    }
+  }
 }
 
 
@@ -38,7 +38,7 @@ body{
   height: 100px;
   display: flex;
   justify-content: space-between;
-  z-index: 11;  
+  z-index: 11;
   h1 {
     font-family: 'Acme', sans-serif;
     font-size:30px;
@@ -47,7 +47,7 @@ body{
     a:link {
       color:$polar-white;
     }
-  
+
   }
   &.white-header {
     position: absolute;
@@ -58,9 +58,9 @@ body{
     position: fixed !important;
     background-color: rgba(0,0,0,0.6);
     height:70px;
-    @media #{$phone}{      
-      height: 100%;  
-      background-color: rgba(0,0,0,0.6);    
+    @media #{$phone}{
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
     }
     h1 {
       margin-top: 10px;
@@ -73,8 +73,8 @@ body{
     background-color: #fff;
     position: fixed !important;
     @media #{$phone}{
-      background-color:$midnight-black-100;   
-      height: 100%; 
+      background-color:$midnight-black-100;
+      height: 100%;
       z-index: 20;
       .gnb__list--wrap {
         display: block;
@@ -96,21 +96,21 @@ body{
       color: $midnight-black-70;
     }
   }
-  .gnb__list--wrap {    
+  .gnb__list--wrap {
     margin-right: 20px;
     padding-top: 15px;
     @media #{$phone}{
       display: none;
-    }     
+    }
   }
   .gnb__list {
-    display: flex;   
+    display: flex;
     > li {
         position: relative;
       a {
         position: relative;
         @include fontoption(20px,#fff,normal);
-        line-height: 3.3;    
+        line-height: 3.3;
         display: block;
         padding:0 20px;
       }
@@ -140,7 +140,7 @@ body{
         }
       }
       .sub-nav__wrap{
-        padding: 15px 0px;       
+        padding: 15px 0px;
         ul {
            display: block;
           a {
@@ -152,7 +152,7 @@ body{
           }
         }
       }
-    } 
+    }
   }
   .sub-nav__wrap {
     display: none;
@@ -170,40 +170,40 @@ body{
     position: absolute;
     right: 20px;
     top: 45px;
-    z-index: 10;    
-  }      
+    z-index: 10;
+  }
   &.is-active {
     display: block;
-    .bar {                
-      &.top {           
+    .bar {
+      &.top {
         transform: rotate(-45deg);
         top: 11px;
-      }  
+      }
       &.bottom {
        transform: rotate(45deg);
         bottom: auto;
         top: 11px;
-      }  
-    }       
-  }        
+      }
+    }
+  }
  .bar {
     display: block;
     position: absolute;
     width: 18px;
-    height: 2px;        
+    height: 2px;
     background-color: $polar-white;
-    &.top {          
+    &.top {
       top: 7px;
       left: 3px;
       -webkit-transition: all 0.3s;
       transition: all 0.3s;
     }
-    &.bottom {          
+    &.bottom {
       bottom: 7px;
       left: 3px;
       -webkit-transition: all 0.3s;
       transition: all 0.3s;
-    }     
+    }
   }
 }
 
@@ -230,7 +230,7 @@ body{
   .visual-infor__text {
     position: absolute;
     text-align: center;
-    top:50%;
+    top: 22vw;
     left:50%;
     transform: translate(-50%,-50%);
     @include fontoption(48px,#fff,normal);
@@ -239,12 +239,21 @@ body{
   }
 }
 
+.slider-continer {
+  &.fixed{
+    position: fixed;
+    width:100%;
+    left:0;
+    top:0;
+  }
+}
+
 .content__section {
   width:100%;
   padding: 120px 0 0;
   @media #{$notebook}{
       padding:90px 0 0;
-  }    
+  }
 
 }
 
@@ -262,9 +271,9 @@ body{
   button{
       width:5px;
       height:5px;
-      background: $city-grey-50;        
-      border-radius: 16px;   
-      transition:all 0.3s;      
+      background: $city-grey-50;
+      border-radius: 16px;
+      transition:all 0.3s;
       &.swiper-pagination-bullet-active {
         background: $polar-white;
         width:60px;
@@ -279,10 +288,10 @@ body{
            &:after{
                display:none;
            }
-           &.swiper-pagination-bullet-active{               
-               width: 48px;   
-               height:5px;          
-               border-radius: 9px;   
+           &.swiper-pagination-bullet-active{
+               width: 48px;
+               height:5px;
+               border-radius: 9px;
                transition:all 0.3s;
                &:after{
                    display:none;
@@ -295,7 +304,7 @@ body{
 .section__tit {
   h2{
       @include fontoption(48px,#05141f,bold);
-      line-height: 1.25;        
+      line-height: 1.25;
       &.s-tit__top {
         font-size:36px;
         @media #{$phone}{
@@ -322,10 +331,10 @@ body{
 
   .tit__description {
       margin-top: 24px;
-      @include fontoption(18px,#697278,normal);        
+      @include fontoption(18px,#697278,normal);
       line-height: 1.67;
-      letter-spacing: normal;        
-  }    
+      letter-spacing: normal;
+  }
 }
 
 .full-image__wrap {
@@ -340,18 +349,18 @@ body{
   }
   img {
     width:100%;
-  }  
+  }
 }
 
 
 
 .notice-list-dot {
-    margin-top: 40px;    
+    margin-top: 40px;
     li {
         position: relative;
         margin-bottom:8px;
         padding-left:10px;
-        @include fontoption(14px,#697278,normal);   
+        @include fontoption(14px,#697278,normal);
         text-align: left;
         &::before {
             content: '';
@@ -366,7 +375,7 @@ body{
         }
     }
     @media #{$phone} {
-        margin-top: 24px;   
+        margin-top: 24px;
         li {
             font-size: 12px;
             line-height:1.83;
@@ -385,7 +394,7 @@ body{
         }
     }
   }
-  
+
 
 
   .pc-only {

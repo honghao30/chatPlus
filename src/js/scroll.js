@@ -46,22 +46,54 @@ function scrollEventManage(){
 
     if (Yoffset > lastScrollTop){
         // downscroll code
-        header.classList.remove('fixed')
-        console.log('내려가나',Yoffset)
+        header.classList.remove('fixed');
+        console.log('내려가나');
 
     } else {
         // upscroll code
         console.log('올라가나');
         if(keyvisual){
             const keyviHeight = keyvisual.offsetHeight * 0.7;
-            if(Yoffset >= keyviHeight){
-                header.classList.add('fixed')
-            }else {
-                header.classList.remove('fixed')
-            }
+
         }
 
     }
     lastScrollTop = Yoffset <= 0 ? 0 : Yoffset;
     // 위 아래 구분을 위한 스크립트====================
+}
+const keyvi = document.querySelector(".key-visual");
+function keyviSet(){
+    if(keyvi){
+        const keyvisualHeight = 5 * window.innerHeight;
+        keyvi.style.height = `${keyvisualHeight}px`;
+        console.log("시작",keyvisualHeight)
+        // if(yOffset >= 0){
+        //     keyvi.classList.add('fixed');
+        // };
+        // if(yOffset >= keyviheight){
+        //     keyvi.classList.remove('fixed');
+        // };
+    }
+}
+
+//VISUAL TEXT ANI
+window.addEventListener('scroll',scrolltextmotion);
+function scrolltextmotion(){
+    keyviSet();
+    const yOffset = window.pageYOffset;
+    const keyviheight = keyvi.offsetHeight;
+    const scrollRatio = (yOffset /  keyviheight) * 100;
+    if(yOffset >= 0){
+        document.querySelector(".slider-continer").classList.add('fixed');
+    };
+    if(yOffset >= keyviheight){
+        document.querySelector(".slider-continer").classList.remove('fixed');
+    };
+    if(yOffset == 0){
+        document.querySelector(".slider-continer").classList.remove('fixed');
+    }
+    if(yOffset <= (scrollRatio * 0.25)){
+        document.querySelector(".tit-msg1").style.opacity = 1;
+        console.log('1번',scrollRatio)
+    }
 }
