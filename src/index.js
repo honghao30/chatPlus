@@ -1,7 +1,7 @@
 // import { hello, add } from "./util";
 import "./style.scss";
 import "./js/ui.js";
-import "./js/scroll.js";
+//import "./js/scroll.js";
 import "./Swiper.js";
 //import "./js/scroll_ani";
 

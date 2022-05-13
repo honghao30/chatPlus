@@ -226,6 +226,12 @@ body{
     img {
       width:100%;
     }
+    &.swiper-slide-active{
+      .visual-infor__text {
+        opacity:1;
+        transform:translateX(-50%);
+      }
+    }
   }
   .visual-infor__text {
     position: absolute;
@@ -235,7 +241,15 @@ body{
     transform: translate(-50%,-50%);
     @include fontoption(48px,#fff,normal);
     z-index: 11;
-    opacity: 0;
+    opacity:0;
+    transform:translateX(30%);
+    transition-property:opacity, transform;
+    transition-duration:0.8s, 0.6s;
+    transition-delay:0.1.5s, 0.1s;
+    transition-timing-function:ease-in-out;
+    @media #{$phone}{
+      font-size:16px;
+    }
   }
 }
 
@@ -250,17 +264,35 @@ body{
 
 .content__section {
   width:100%;
+  background-color: #fff;
   padding: 120px 0 0;
+  &.contact {
+    padding: 120px 60px;
+    text-align: left;
+    @media #{$phone}{
+      padding: 60px 20px;
+    }
+    .section__tit {
+      @include fontoption(68px,$midnight-black-100,bold);
+      text-align: left;
+      line-height: 2.2;
+    }
+    .context__wrap {
+      @include fontoption(38px,$midnight-black-100,normal);
+      text-align: left;
+      line-height: 2.0;
+    }
+  }
+
   @media #{$notebook}{
       padding:90px 0 0;
   }
-
 }
 
 .footer {
   background-color: $footer-back;
   padding:50px 20px;
-  @include fontoption(15px,$footer-txt,normal);;
+  @include fontoption(15px,$footer-txt,normal);
 }
 
 .swiper-pagination {
@@ -302,6 +334,7 @@ body{
 }
 
 .section__tit {
+  text-align: center;
   h2{
       @include fontoption(48px,#05141f,bold);
       line-height: 1.25;
@@ -316,8 +349,13 @@ body{
           line-height: 1.36;
       }
   }
+  h3 {
+    @include fontoption(48px,#05141f,bold);
+    line-height: 1.25;
+  }
   .description-top {
-    @include fontoption(18px,#05141f,bold);
+    margin-top: 30px;
+    @include fontoption(18px,#05141f,normal);
     line-height: 1.67;
     margin-bottom: 16px;
     @media #{$phone}{
@@ -352,7 +390,25 @@ body{
   }
 }
 
-
+.biz__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  li {
+    border: 1px solid $midnight-black-60;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin:0 20px;
+    width:150px;
+    height:150px;
+    text-align: center;
+    @include fontoption(18px,#697278,bold);
+    line-height: 150px;
+  }
+}
 
 .notice-list-dot {
     margin-top: 40px;
@@ -409,3 +465,5 @@ body{
         display: block;
     }
   }
+
+  /// css
