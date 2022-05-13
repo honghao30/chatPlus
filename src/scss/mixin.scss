@@ -1,4 +1,4 @@
-//반응형 
+//반응형
 $phone: "only screen and (max-width : 769px)";
 $phone480: "only screen and (max-width : 480px)";
 $phone360: "only screen and (max-width : 360px)";
@@ -16,7 +16,7 @@ $tablet920: "screen and (max-width : 920px)";
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-    } @else { 
+    } @else {
         display: -webkit-box;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -32,7 +32,7 @@ $font-family:'Noto Sans KR', sans-serif;
     color: $font-color;
     font-weight: $font-weight;
     line-height: 1.43;
-    letter-spacing: normal;                                 
+    letter-spacing: normal;
 }
 
 @mixin positioninfo($pos,$type,$wd,$lpoint,$tpoint) {
@@ -42,3 +42,33 @@ $font-family:'Noto Sans KR', sans-serif;
     left:$lpoint;
     top:$tpoint;
 }
+
+@mixin listtype($mgb,$pdl) {
+    position: relative;
+    @include fontoption(14px,$midnight-black-60,normal);
+    margin-bottom: $mgb;
+    padding-left: $pdl;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #697278;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+    @media #{$tablet} {
+        @include fontoption(12px,$midnight-black-60,normal);
+        line-height: 1.83;
+        &::before {
+            width:2px;
+            height:2px;
+            top:8px;
+        }
+    }
+  }
