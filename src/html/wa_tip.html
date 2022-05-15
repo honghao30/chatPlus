@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <title>웹접근성 | 퍼블리셔의 코드</title>
 </head>
-<body>
+<body class="no-visual">
     <div id="root">
         <div id="accessibility">
             <a href="#gnb">주 메뉴 바로가기</a>
@@ -17,23 +17,23 @@
             <h1><a href="/" title="메인 페이지">My code</a></h1>
             <nav class="gnb__list--wrap" id="gnb">
                 <ul class="gnb__list">
-                    <li class="gnbitem"><a href="./html/markup_roll.html">마크업 컨벤션</a></li>
+                    <li class="gnbitem"><a href="/html/markup_roll.html">마크업 컨벤션</a></li>
                     <li class="gnbitem"><a href="#" class="hasDepth">소스 자료실</a>
                         <div class="sub-nav__wrap">
                             <ul>
-                                <li><a href="./html/js_tab.html">탭 & 아코디언</a></li>
-                                <li><a href="./html/js_tab.html">로딩 갤러리</a></li>
-                                <li><a href="./html/js_tab.html">모달 팝업</a></li>
-                                <li><a href="./html/js_tab.html">드랍다운박스</a></li>
-                                <li><a href="./html/js_tab.html">더보기</a></li>
+                                <li><a href="/html/js_tab.html">탭 & 아코디언</a></li>
+                                <li><a href="/html/js_tab.html">로딩 갤러리</a></li>
+                                <li><a href="/html/js_tab.html">모달 팝업</a></li>
+                                <li><a href="/html/js_tab.html">드랍다운박스</a></li>
+                                <li><a href="/html/js_tab.html">더보기</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="gnbitem"><a href="#" class="hasDepth">웹접근성</a>
                         <div class="sub-nav__wrap">
                             <ul>
-                                <li><a href="./html/wa.html">심사기준</a></li>
-                                <li><a href="./html/wa_tip.html">작업 가이드</a></li>
+                                <li><a href="/html/wa.html">심사기준</a></li>
+                                <li><a href="/html/wa_tip.html">WA ARIA</a></li>
                             </ul>
                         </div>
                     </li>
@@ -51,9 +51,286 @@
             웹접근성
         </div>
         <div id="content">
-            <div class="contents scroll-enter fade-in">
-                <div class="section scroll-enter fade-in">
-    테스트
+            <div class="contents">
+                <div class="aem-content__section responr-wd">
+                    <div class="content__section--title  size-middle">
+                        <h4>WAI-ARIA</h4>
+                    </div>
+                    <div class="content__section--body">
+                        <div class="cmp-contentsbox__wrap">
+                            <div class="cpm-contentsbox__innerbox">
+                                W3C에 의해 제정된 RIA(Rich Internet Applications)의 웹 접근성에 대한 표준 기술 규격을 의미함.<br><br>
+                                RIA(Rich Internet Applications)란?
+정적인 HTMl과 단순한 자바스크립트 환경의 웹이 아닌 동적인 자바스크립트와 Ajax와 같은 기술을 사용한 환경에서 수준 높은 UX(User eXperience)를 제공하는 웹 애플리케이션<br>
+RIA(Rich Internet Applications)는 화려하고 편리한 웹 애플리케이션이지만 스크린리더와 같은 보조기술을 사용하는 장애인들이 접근하기에 취약하다.<br>
+자바스크립트, AJAX등을 활용하여 의미를 가지지 않는 요소(div,span)로 특정 컴포넌트를 구현할 때 스크린리더 등 보조기기에서 해당 컴포넌트의 기능을 명확하게 파학하기 어려움.
+ 주식 시세나 RSS Feed 등 시간에 따라 정보가 자동으로 업데이트 되는 경우 스크린리더 등 보조기기에서 업데이트 된 정보를 파악하기 어려움<br>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="content__section--title  size-middle">
+                        <h4>사용예제</h4>
+                    </div>
+                    <div class="content__section--body">
+                        <div class="cmp-contentsbox__wrap">
+                            <div class="cpm-contentsbox__innerbox">
+                                a태그에 링크 대신 버튼으로 사용되는 경우 role="button"<br>
+                                <xmp>
+                                    <a href="#" role="button">모달창</a>
+                                </xmp>
+                                <br><br>
+                                컴포넌트를 숨긴 상태라면 (탭,슬라이드등 컨텐츠)
+                                <xmp>
+                                    aria-hidden="true" (true 숨겨진/false 보여진)
+                                </xmp>
+                                <br><br>
+                                컴포넌트가 펼쳐진 상태라면 (아코디언 메뉴)
+                                <xmp>
+                                    aria-expanede="true" (true 펼쳐진/false 닫혀진)
+                                </xmp>
+                                <br><br>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="content__section--title  size-middle">
+                        <h4>Aria Roles</h4>
+                    </div>
+                    <div class="content__section--body">
+                        <div class="cmp-table__wrap whith-bg">
+                            <table class="table table_style ">
+                                <caption>속성정의</caption>
+                                <colgroup>
+                                    <col style="width:15%">
+                                    <col style="width:20%">
+                                    <col style="width:20%">
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">분류</th>
+                                        <th scope="col">구분</th>
+                                        <th scope="col">이름</th>
+                                        <th scope="col">설명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="8">양식</td>
+                                        <td>입력서식</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/form" target="_blank" title="새창열림" class="g-link-basic">role="form"</a></td>
+                                        <td>동일한 HTML요소 &lt;form&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>자유형식 입력텍스트</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/textbox" target="_blank" title="새창열림" class="g-link-basic">role="textbox"</a></td>
+                                        <td>동일한 HTML요소 &lt;input type="text"&gt;, &lt;textarea&gt;, aria-multiline=""
+                                            속성으로 줄바꿈 처리 적용</td>
+                                    </tr>
+                                    <tr>
+                                        <td>일반형식 입력텍스트</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/input" target="_blank" title="새창열림" class="g-link-basic">role="input"</a></td>
+                                        <td>동일한 HTML요소 &lt;input type="text"&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>라디오</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/radio" target="_blank" title="새창열림" class="g-link-basic">role="radio"</a></td>
+                                        <td>동일한 HTML요소 &lt;input type="radio"&gt;, "라디오그룹"으로 묶어주어야 함.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>체크박스</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/checkbox" target="_blank" title="새창열림" class="g-link-basic">role="checkbox"</a></td>
+                                        <td>동일한 HTML요소 &lt;input type="checkbox"&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>선택목록</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/combobox" target="_blank" title="새창열림" class="g-link-basic">role="combobox"</a></td>
+                                        <td>동일한 HTML요소 &lt;select&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>선택옵션</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/option" target="_blank" title="새창열림" class="g-link-basic">role="option"</a></td>
+                                        <td>동일한 HTML요소 &lt;option&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>슬라이더</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles-2/slider" target="_blank" title="새창열림" class="g-link-basic">role="slider"</a></td>
+                                        <td>동일한 HTML요소 &lt;input type="range"&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="6">표</td>
+                                        <td>표</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/table" target="_blank" title="새창열림" class="g-link-basic">role="table"</a></td>
+                                        <td>동일한 HTML요소 &lt;table&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>행그룹</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/rowgroup" target="_blank" title="새창열림" class="g-link-basic">role="rowgroup"</a></td>
+                                        <td>동일한 HTML요소 &lt;tbody&gt;, &lt;thead&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>행</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/row" target="_blank" title="새창열림" class="g-link-basic">role="row"</a></td>
+                                        <td>동일한 HTML요소 &lt;tr&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>제목(열)</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/columnheader" target="_blank" title="새창열림" class="g-link-basic">role="columnheader"</a></td>
+                                        <td>동일한 HTML요소 &lt;th scope="col"&gt;, 그리드인 경우 aria-colindex=""와 같이 사용됨</td>
+                                    </tr>
+                                    <tr>
+                                        <td>제목(행)</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/rowheader" target="_blank" title="새창열림" class="g-link-basic">role="rowheader"</a></td>
+                                        <td>동일한 HTML요소 &lt;th scope="row"&gt;, 그리드인 경우 aria-colindex=""와 같이 사용됨</td>
+                                    </tr>
+                                    <tr>
+                                        <td>내용</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/cell" target="_blank" title="새창열림" class="g-link-basic">role="cell"</a></td>
+                                        <td>동일한 HTML요소 &lt;td&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="5">HTML5</td>
+                                        <td>네비게이션</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/navigation" target="_blank" title="새창열림" class="g-link-basic">role="navigation"</a></td>
+                                        <td>동일한 HTML요소 &lt;nav&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>일반 섹션</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/section" target="_blank" title="새창열림" class="g-link-basic">role="section"</a></td>
+                                        <td>동일한 HTML요소 &lt;section&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Article</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/article" target="_blank" title="새창열림" class="g-link-basic">role="article"</a></td>
+                                        <td>동일한 HTML요소 &lt;article&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>메인컨텐츠</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/main" target="_blank" title="새창열림" class="g-link-basic">role="main"</a></td>
+                                        <td>동일한 HTML요소 &lt;main&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>그래픽문서</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/figure" target="_blank" title="새창열림" class="g-link-basic">role="figure"</a></td>
+                                        <td>동일한 HTML요소 &lt;figure&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="4">기본요소</td>
+                                        <td>버튼</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/button" target="_blank" title="새창열림" class="g-link-basic">role="button"</a></td>
+                                        <td>동일한 HTML요소 &lt;button&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>이미지</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/img" target="_blank" title="새창열림" class="g-link-basic">role="img"</a></td>
+                                        <td>동일한 HTML요소 &lt;img&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>링크</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/link" target="_blank" title="새창열림" class="g-link-basic">role="link"</a></td>
+                                        <td>동일한 HTML요소 &lt;a&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>선</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles-2/separator" target="_blank" title="새창열림" class="g-link-basic">role="separator"</a>
+                                        </td>
+                                        <td>동일한 HTML요소 &lt;hr&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="3">목록, 정의요소</td>
+                                        <td>목록의 그룹</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/list" target="_blank" title="새창열림" class="g-link-basic">role="list"</a></td>
+                                        <td>동일한 HTML요소 &lt;ul&gt;, &lt;ol&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>목록의 단일항목</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/listitem" target="_blank" title="새창열림" class="g-link-basic">role="listitem"</a></td>
+                                        <td>동일한 HTML요소 &lt;li&gt;, &lt;dt&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>데이터리스트</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/listbox" target="_blank" title="새창열림" class="g-link-basic">role="listbox"</a></td>
+                                        <td>동일한 HTML요소 &lt;datalist&gt; (사파리 미지원 태그)</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="10">비슷한 HTML요소</td>
+                                        <td>주요 제목</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/heading" target="_blank" title="새창열림" class="g-link-basic">role="heading"</a></td>
+                                        <td>비슷한 HTML요소 &lt;h1&gt;~&lt;h6&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>중요한 섹션</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/region" target="_blank" title="새창열림" class="g-link-basic">role="region"</a></td>
+                                        <td>비슷한 HTML요소 &lt;section&gt;, 중요한 내용을 포함하는 인식 가능한 섹션</td>
+                                    </tr>
+                                    <tr>
+                                        <td>그리드</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/grid" target="_blank" title="새창열림" class="g-link-basic">role="grid"</a></td>
+                                        <td>비슷한 HTML요소 &lt;table&gt;, aria-colcount="" 와 같이 사용됨</td>
+                                    </tr>
+                                    <tr>
+                                        <td>그리드 내용</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/gridcell" target="_blank" title="새창열림" class="g-link-basic">role="gridcell"</a></td>
+                                        <td>비슷한 HTML요소 &lt;td&gt;, 그리드인 경우 aria-colindex=""와 같이 사용됨</td>
+                                    </tr>
+                                    <tr>
+                                        <td>정의 제목</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/term" target="_blank" title="새창열림" class="g-link-basic">role="term"</a></td>
+                                        <td>비슷한 HTML요소 &lt;dt&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>정의 내용</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/definition" target="_blank" title="새창열림" class="g-link-basic">role="definition"</a></td>
+                                        <td>비슷한 HTML요소 &lt;dd&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>슬라이더</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/range" target="_blank" title="새창열림" class="g-link-basic">role="range"</a></td>
+                                        <td>비슷한 HTML요소 &lt;input type="range"&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>스핀버튼</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles-2/spinbutton" target="_blank" title="새창열림" class="g-link-basic">role="spinbutton"</a>
+                                        </td>
+                                        <td>비슷한 HTML요소 &lt;input type="number"&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contentinfo</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/contentinfo" target="_blank" title="새창열림" class="g-link-basic">role="contentinfo"</a>
+                                        </td>
+                                        <td>비슷한 HTML요소 &lt;footer&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>보완적인 랜드 마크</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/complementary" target="_blank" title="새창열림" class="g-link-basic">role="complementary"</a></td>
+                                        <td>비슷한 HTML요소 &lt;aside&gt;</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="4">기타</td>
+                                        <td>라디오 그룹</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/radiogroup" target="_blank" title="새창열림" class="g-link-basic">role="radiogroup"</a></td>
+                                        <td>"라디오그룹" 으로 역할정의</td>
+                                    </tr>
+                                    <tr>
+                                        <td>섹션 제목</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/sectionhead" target="_blank" title="새창열림" class="g-link-basic">role="sectionhead"</a>
+                                        </td>
+                                        <td>추상적인 역할</td>
+                                    </tr>
+                                    <tr>
+                                        <td>선택 목록</td>
+                                        <td><a href="http://www.a11yhelp.org/index.php/roles/select" target="_blank" title="새창열림" class="g-link-basic">role="select"</a></td>
+                                        <td>추상적인 역할</td>
+                                    </tr>
+                                    <tr>
+                                        <td>텍스트</td>
+                                        <td>role="text"</td>
+                                        <td>이미지를 텍스트로만 읽도록 사용<br>마크업에 의해 분리된 텍스트를 한번에 읽도록 사용</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
                 </div>
             </div>
        </div>

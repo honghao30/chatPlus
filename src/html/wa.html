@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <title>웹접근성 | 퍼블리셔의 코드</title>
 </head>
-<body>
+<body class="no-visual">
     <div id="root">
         <div id="accessibility">
             <a href="#gnb">주 메뉴 바로가기</a>
@@ -17,23 +17,23 @@
             <h1><a href="/" title="메인 페이지">My code</a></h1>
             <nav class="gnb__list--wrap" id="gnb">
                 <ul class="gnb__list">
-                    <li class="gnbitem"><a href="./html/markup_roll.html">마크업 컨벤션</a></li>
+                    <li class="gnbitem"><a href="/html/markup_roll.html">마크업 컨벤션</a></li>
                     <li class="gnbitem"><a href="#" class="hasDepth">소스 자료실</a>
                         <div class="sub-nav__wrap">
                             <ul>
-                                <li><a href="./html/js_tab.html">탭 & 아코디언</a></li>
-                                <li><a href="./html/js_tab.html">로딩 갤러리</a></li>
-                                <li><a href="./html/js_tab.html">모달 팝업</a></li>
-                                <li><a href="./html/js_tab.html">드랍다운박스</a></li>
-                                <li><a href="./html/js_tab.html">더보기</a></li>
+                                <li><a href="/html/js_tab.html">탭 & 아코디언</a></li>
+                                <li><a href="/html/js_tab.html">로딩 갤러리</a></li>
+                                <li><a href="/html/js_tab.html">모달 팝업</a></li>
+                                <li><a href="/html/js_tab.html">드랍다운박스</a></li>
+                                <li><a href="/html/js_tab.html">더보기</a></li>
                             </ul>
                         </div>
                     </li>
                     <li class="gnbitem"><a href="#" class="hasDepth">웹접근성</a>
                         <div class="sub-nav__wrap">
                             <ul>
-                                <li><a href="./html/wa.html">심사기준</a></li>
-                                <li><a href="./html/wa_tip.html">작업 가이드</a></li>
+                                <li><a href="/html/wa.html">심사기준</a></li>
+                                <li><a href="/html/wa_tip.html">WA ARIA</a></li>
                             </ul>
                         </div>
                     </li>
@@ -51,9 +51,83 @@
             웹접근성
         </div>
         <div id="content">
-            <div class="contents scroll-enter fade-in">
-                <div class="section scroll-enter fade-in">
-    테스트
+            <div class="contents">
+                <div class="aem-content__section responr-wd">
+                    <div class="content__section--title  size-middle">
+                        <h4>접근성 작업 가이드</h4>
+                    </div>
+                    <div class="content__section--body">
+                        <div class="cmp-contentsbox__wrap">
+                            <div class="cpm-contentsbox__innerbox">
+                        모든 요소는 키보드 탭으로 이동이 되어야 하며 열리고 닫히는 모달팝업,팝업창,레이어의 경우 닫히면 버튼위치로 포커스가 리턴해야 한다.<br>
+포커스는 열린 모달,레이어내부로 이동이 되어야 하며 모달,레이어안쪽에서만 작동해야 한다.
+                            </div>
+                            <h5>타이틀</h5>
+                            <div class="cpm-contentsbox__innerbox type-tag">
+                                <xmp>
+                                    <title>인사말 | 회사소개 | 사이트명</title>
+                                </xmp>
+                                
+                            </div>
+                            <h5>테이블 caption</h5>
+                            <div class="cpm-contentsbox__innerbox type-tag">
+                                <xmp>
+                                    <table>
+                                        <caption><span class="ir-text">번호,부서,이름으로 구성된 조직연락처 도표</span></caption>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">번호</th>
+                                                <th scope="col">부서</th>
+                                                <th scope="col">이름</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <br>
+                                    혹은
+                                    <br> 
+                                    <table>
+                                        <caption><span class="ir-text">번호,부서,이름으로 구성된 공지사항 게시판의 2019년 회식 시간 안내표 상세글</span></caption>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">번호</th>
+                                                <th scope="col">부서</th>
+                                                <th scope="col">이름</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </xmp>                                
+                            </div>
+
+                            <h5>폼요소</h5>
+                            <div class="cpm-contentsbox__innerbox type-tag">
+                                input,radio,checkbox 에는 label 혹은 title을 제공해야 한다.<br>
+                                <xmp>
+                                    <tr>
+                                        <th>전화번호</th>
+                                        <td>
+                                            <input type="text" title="전화번호 앞자리 입력">
+                                            <input type="text" title="전화번호 가운데 자리">
+                                            <input type="text" title="전화번호 마지막 자리">
+                                         </td>
+                                     </tr>
+                                </xmp>          
+                                동적으로 추가되는 항목들
+                                <xmp>
+                                    <tr>
+                                        <th>경력</th>
+                                        <td>
+                                            <input type="text" title="경력입력 1행"><br>
+                                            <input type="text" title="경력입력 2행"><br>
+                                            <input type="text" title="경력입력 3행"><br>
+                                            <input type="text" title="경력입력 4행">
+                                        </td>
+                                    </tr>
+                                </xmp>                                                              
+                            </div>
+
+
+                        </div>
+                    </div>
                 </div>
             </div>
        </div>

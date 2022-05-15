@@ -38,6 +38,14 @@ module.exports = {
       filename: './index.html',
     }),
     new HtmlWebpackPlugin({
+      template: "./src/html/markup_roll.html",
+      inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/markup_roll.html',
+    }),
+    new HtmlWebpackPlugin({
       template: "./src/html/wa.html",
       inject: 'body',
       minify: {
