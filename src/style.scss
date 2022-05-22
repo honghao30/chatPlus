@@ -43,8 +43,275 @@ body{
         }
       }
     } 
+    .mobile-menu {
+      .bar {
+        background:$midnight-black-70;
+      }
+    }
+    &.is-active {
+      .header {
+        &.is-active {
+          a {
+            color:$polar-white;
+          }
+        }
+      }
+    }
   }
 }
+//////////BUTOTN////////////////
+.btn-primary {
+  position: relative;
+  // min-width: 126px;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  padding: 16px 24px;
+  color: $polar-white;
+  background-color: $midnight-black-100;
+  transition: all 0.4s;
+  z-index: 1;
+  border: 1px solid $midnight-black-100;
+  &:after {
+      content: '';
+      width: 0%;
+      height: 100%;
+      top: 0;
+      position: absolute;
+      left: 0;
+      transition: all 0.4s;
+      background-color: $midnight-black-70;
+      z-index: -1;
+  }
+  &:hover {
+      border-color: $midnight-black-70;
+  }
+  &:hover:after {
+      width: 100%;
+      z-index: -1;
+  }
+
+  &.type-dark {
+      background-color: $polar-white;
+      border: 1px solid $polar-white;
+      color: $midnight-black-100;
+      &:after {
+          background-color: $city-grey-20;
+      }
+      &:hover {
+          border-color: $city-grey-20;
+      }
+  }
+  @media #{$tablet} {
+      padding: 13px 16px;
+  }
+}
+a.btn-primary {
+  display: inline-block;
+}
+.btn-secondary {
+  position: relative;
+  // min-width: 126px;
+  font-family: Kia Signature Regular;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  padding: 16px 24px;
+  background-color: $polar-white;
+  color: $midnight-black-100;
+  border: 1px solid $city-grey-20;
+  transition: all 0.4s;
+  z-index: 1;
+  &:after {
+      content: '';
+      width: 0%;
+      height: 100%;
+      top: 0;
+      position: absolute;
+      left: 0;
+      transition: all 0.4s;
+      background-color: $midnight-black-3;
+      z-index: -1;
+  }
+  &:hover:after {
+      width: 100%;
+      z-index: -1;
+  }
+  &.disabled,
+  &:disabled {
+      color: $city-grey-20;
+      background-color: $polar-white;
+      border: 1px solid $city-grey-20;
+      &:hover:after {
+          display: none;
+      }
+  }
+  &.type-dark {
+      color: $polar-white;
+      background-color: $midnight-black-100;
+      border: 1px solid $polar-white;
+      &:after {
+          background-color: rgba(255, 255, 255, 0.1);
+      }
+      &:disabled {
+          background-color: inherit;
+          color: $midnight-black-60;
+          border: 1px solid $city-grey-20;
+      }
+  }
+  @media #{$tablet} {
+      padding: 13px 16px;
+  }
+}
+a.btn-secondary {
+  display: inline-block;
+}
+.btn-secondary.no-border {
+  border: none;
+}
+.btn-small {
+  position: relative;
+  // min-width: 92px;
+  background-color: $midnight-black-100;
+  font-family: Kia Signature Regular;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  color: $polar-white;
+  text-align: center;
+  padding: 13px 16px;
+  transition: all 0.4s;
+  z-index: 1;
+  border: 1px solid $midnight-black-100;
+  &:after {
+      content: '';
+      width: 0%;
+      height: 100%;
+      top: 0;
+      position: absolute;
+      left: 0;
+      transition: all 0.4s;
+      background-color: $midnight-black-70;
+      z-index: -1;
+  }
+  &:hover {
+      border-color: $midnight-black-70;
+  }
+  &:hover:after {
+      width: 100%;
+      z-index: -1;
+  }
+  &:disabled {
+      background-color: $city-grey-20;
+      color: $city-grey-20;
+      border: 1px solid $city-grey-20;
+      &:hover:after {
+          display: none;
+      }
+  }
+  &.type-secon {
+      color: $midnight-black-100;
+      background-color: $polar-white;
+      border: 1px solid $city-grey-20;
+      &:after {
+          background-color: $midnight-black-3;
+      }
+      &:disabled {
+          color: $city-grey-20;
+          background-color: $polar-white;
+          border: 1px solid $city-grey-20;
+      }
+  }
+}
+a.btn-small {
+  display: inline-block;
+}
+.btn-filters {
+  // min-width: 86px;
+  background-color: $polar-white;
+  font-family: Kia Signature Regular;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  color: $midnight-black-100;
+  text-align: center;
+  padding: 12px 24px;
+  border: 1px solid $city-grey-20;
+  border-radius: 30px;
+  &:hover {
+      border-color: $midnight-black-100;
+      background-color: $midnight-black-3;
+      transition: all 0.4s;
+  }
+  &.selected {
+      color: $polar-white;
+      background-color: $midnight-black-100;
+      border: 1px solid $midnight-black-100;
+  }
+  &:disabled {
+      color: $city-grey-20;
+      background-color: inherit;
+      border: 1px solid $city-grey-20;
+  }
+}
+
+.btn-time {
+  // min-width: 86px;
+  background-color: $polar-white;
+  font-family: Kia Signature Regular;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: bold;
+  color: $midnight-black-60;
+  text-align: center;
+  padding: 12px 16px;
+  border: 1px solid $city-grey-20;
+  &:hover {
+      color: $midnight-black-100;
+      border: 1px solid $midnight-black-100;
+      transition: all 0.4s;
+  }
+  &.selected {
+      color: $polar-white;
+      background-color: $midnight-black-100;
+      border: 1px solid $midnight-black-100;
+  }
+  &:disabled {
+      color: $city-grey-20;
+      background-color: inherit;
+      border: 1px solid $city-grey-20;
+  }
+}
+
+//[mobile buttons] guide
+// $phone: "only screen and (max-width : 769px)";
+@media #{$phone} {
+  .btn-primary,
+  .btn-secondary {
+      // min-width: 110px;
+      font-size: 12px;
+      white-space: nowrap;
+  }
+  .btn-time {
+      padding: 12px 8px;
+      font-size: 12px;
+  }
+}
+
+// .btn-primary__white {
+//   min-width: 126px;
+//   background-color: $polar-white;
+//   font-family: Kia Signature Regular;
+//   font-size: 12px;
+//   line-height: 48px;
+//   color: $midnight-black-100;
+//   text-align: center;
+// }
+
+
+
+/////////////////////////////////////////
 .header {
   position: relative;
   width: 100%;
@@ -297,11 +564,58 @@ body{
   background-color: #fff;
   border-right: 1px solid $midnight-black-6;
   height:auto;
+  @media #{$phone}{
+    position: relative;
+    display: block;
+    width: 100%;
+    top: 0;
+    border-right: 0;
+    border-bottom: 1px solid $midnight-black-70;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera*/
+    }
+    ul {
+      display: flex;
+      white-space: nowrap;
+
+    }
+  }
   li {
+    @media #{$phone}{
+      padding:0 20px;
+    }
     a {
       padding:16px 0 16px 20px;
       @include fontoption(18px,$midnight-black-70,normal); 
+      @media #{$phone}{
+        white-space: nowrap;
+        display: block;
+        font-size: 13px;
+        padding: 15px 0;
+      }
     }
+  }
+}
+.contents {
+  &.js-cont {    
+    padding-left: 220px;
+    @media #{$phone}{
+      padding:10px;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+  }
+}
+
+xmp {
+  @media #{$phone}{
+    max-width: 100%;
+    display: block;
+    overflow-y: scroll;
   }
 }
 
@@ -309,6 +623,7 @@ body{
   width:100%;
   background-color: #fff;
   padding: 120px 0 0;
+
   &.contact {
     padding: 120px 60px;
     text-align: left;
