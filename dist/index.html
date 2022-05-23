@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+    <title>My code</title>
+<link href="common.css" rel="stylesheet"></head>
+<body>
+    <div id="root">
+        <div id="accessibility">
+            <a href="#gnb">주 메뉴 바로가기</a>
+            <a href="#content">본문 바로가기</a>
+        </div>
+        <div class="header">
+            <h1><a href="/" title="메인 페이지">My code</a></h1>
+            <nav class="gnb__list--wrap" id="gnb">
+                <ul class="gnb__list">
+                    <li class="gnbitem"><a href="./html/markup_roll.html">마크업 컨벤션</a></li>
+                    <li class="gnbitem"><a href="#" class="hasDepth">소스 자료실</a>
+                        <div class="sub-nav__wrap">
+                            <ul>
+                                <li><a href="./html/js_tab.html">탭 & 아코디언</a></li>
+                                <li><a href="./html/js_tab.html">로딩 갤러리</a></li>
+                                <li><a href="./html/js_tab.html">모달 팝업</a></li>
+                                <li><a href="./html/js_tab.html">드랍다운박스</a></li>
+                                <li><a href="./html/js_tab.html">더보기</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnbitem"><a href="#" class="hasDepth">웹접근성</a>
+                        <div class="sub-nav__wrap">
+                            <ul>
+                                <li><a href="./html/wa.html">가이드</a></li>
+                                <li><a href="./html/wa_tip.html">WA ARIA</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnbitem"><a href="mailto:hnky2006@naver.com">프로젝트 문의</a></li>
+                    <li class="gnbitem"><a href="https://pubwork.tistory.com/" target="blank" title="새창 열림">블로그</a></li>
+                </ul>
+            </nav>
+            <button type="button" class="mobile-menu">
+                <span class="ir-text">모바일 메뉴 열기</span>
+                <span class="bar top"></span>
+                <span class="bar bottom"></span>
+            </button>
+        </div>
+
+        <div class="key-visual">
+            <div class="slider-continer">
+              <div class="swiper cmp-swiper">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="visual-infor__text tit-msg1">평범한 마크업 코드에 가치를 부여하다!</div>
+                        <div style="background: url('https://github.com/honghao30/mycode/blob/main/media/v1.jpg?raw=true') no-repeat center top;" class="slider-img pc-only"></div>
+                          <div style="background: url('https://github.com/honghao30/mycode/blob/main/media/v1_m.jpg?raw=true') no-repeat  center top;" class="slider-img mo-only"></div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="visual-infor__text tit-msg2">정보의 차별이 없어야 한다 - 웹접근성 컨설팅</div>
+                        <div style="background: url('https://github.com/honghao30/mycode/blob/main/media/v2.jpg?raw=true')  no-repeat center top;" class="slider-img pc-only"></div>
+                        <div style="background: url('https://github.com/honghao30/mycode/blob/main/media/v2_m.jpg?raw=true') no-repeat  center top;" class="slider-img mo-only"></div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="visual-infor__text tit-msg3">기술의 변화에 따라가고저 하는 노력</div>
+                        <div style="background: url('https://github.com/honghao30/mycode/blob/main/media/v3.jpg?raw=true')  no-repeat center top;" class="slider-img pc-only"></div>
+                        <div style="background: url('https://github.com/honghao30/mycode/blob/main/media/v3_m.jpg?raw=true') no-repeat  center top;" class="slider-img mo-only"></div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="visual-infor__text tit-msg3">가장 빛나는 순간을 위한 도전!</div>
+                        <div style="background: url('https://github.com/honghao30/mycode/blob/main/media/v4.jpg?raw=true')  no-repeat center top;" class="slider-img pc-only"></div>
+                        <div style="background: url('https://github.com/honghao30/mycode/blob/main/media/v4_m.jpg?raw=true')  no-repeat center top;" class="slider-img mo-only"></div>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+              </div>
+          </div>
+
+        </div>
+        <div id="content">
+            <div class="content__section">
+                <div class="section__tit">
+                    <h3>My code</h3>
+                    <p class="description-top">
+                        빠르게 변화하는 기술과 온라인 환경 고객의 다양한 요구를 빠르고 유연하게<br>
+대응하기 위한 노력은 공부뿐이다! 공부의 기록을 위한 공간이다.
+                    </p>
+                </div>
+                <ul class="biz__list">
+                    <li>반응형 웹</li>
+                    <li>웹 접근성</li>
+                    <li>UI 스크립트</li>
+                    <li>React Publish</li>
+                </ul>
+            </div>
+            <div class="content__section">
+                <div class="full-image__wrap">
+                    <div class="teaser-text">
+                        귀찮다! 여행 어때?
+                    </div>
+                    <img src="https://github.com/honghao30/mycode/blob/main/media/v8.jpg?raw=true" class="pc-only" alt="">
+                    <img src="https://github.com/honghao30/mycode/blob/main/media/v8_m.jpg?raw=true" class="mo-only" alt="">
+                </div>
+            </div>
+            <div class="content__section contact">
+                <div class="section__tit">
+                    Contact
+                </div>
+                <div class="context__wrap">
+			        Contact us at  <br>
+                    angelcode02@gmail.com
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            COPYRIGHT 2022 YELLOW-FINGER. ALL RIGHTS RESERVED.
+        </div>
+    </div>
+<script defer="defer" src="main.js"></script></body>
+</html>

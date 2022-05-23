@@ -2,11 +2,11 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
     <title>JAVASCRIPT | 퍼블리셔의 코드</title>
-</head>
+<link href="../common.css" rel="stylesheet"></head>
 <body class="no-visual">
     <div id="root">
         <div id="accessibility">
@@ -53,8 +53,8 @@
         <div id="content">
             <div class="js-side">
                 <ul>
-                    <li class="is-active"><a href="js_gallery_type1.html">갤러리(더보기 로딩)</a></li>
                     <li><a href="js_gallery_type1.html">갤러리(스크롤 로딩)</a></li>
+                    <li class="is-active"><a href="js_gallery_type2.html">갤러리(스크롤 로딩)</a></li>
                     <li><a href="#">SWIPER SLIDER</a></li>
                     <li><a href="#">MODAL</a></li>
                     <li><a href="#">tab menu</a></li>
@@ -65,14 +65,45 @@
             </div>
             <div class="contents js-cont">
                 <div class="aem-content__section responr-wd">
-                    <div class="content__section--title  size-middle">
+                    <div class="content__section--title size-middle">
                         <h4>갤러리(더보기 로딩)</h4>
                     </div>
                     <style>
+                        .loading {
+                        border-radius: 50%;
+                        width: 50px;
+                        height: 50px;
+                        border: 2px solid transparent;
+                        animation: rotate 1.5s ease-in infinite;
+                        border-top-color: #ff7f50;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 1rem auto;
+
+                        }
+                        .child-1 {
+                            border-radius: 50%;
+                            width: 40px;
+                            height: 40px;
+                            border: 2px solid transparent;
+                            animation: rotate 1.5s ease-in infinite;
+                            border-bottom-color: #ff7f50;
+                            transition: 2s all;
+                        }
+                        @keyframes rotate {
+                        to {
+                            transform: rotate(360deg);
+                        }
+                        }
+
+
+
                         .gall-load__wrap--type-clc {
                             width: 100%;
                             display: grid;
-                            grid-template-columns: repeat(2, 1fr);
+                            grid-template-columns: repeat(3, 1fr);
                             grid-gap: 10px;
                         }
                         .gall-item__wrap {
@@ -93,13 +124,14 @@
                             filter: contrast(60%);
                             transform: scale(1.02);
                         }
+                    }
                     </style>
 
-                    이미지를 가져다 배열에 담아 클릭할때마다 2개씩 로딩시킨다.<br><br>
+                    이미지를 가져다 배열에 담아 스크롤에 따라 3개씩 로딩시킨다.<br><br>
 
                     <div class="gall-load__wrap--type-clc">
                     </div>
-                    <div style="text-align: center;padding: 50px 0;"><button type="button" class="btn-primary add">더보기</button></div>
+                    
                     <script>
                         (() => {
                             const imgArr = [
@@ -130,28 +162,39 @@
                                 'https://cdn.pixabay.com/photo/2016/11/21/16/08/tying-hair-1846171__340.jpg'
                             ];
 
-                            const gallWrap = document.querySelector('.gall-load__wrap--type-clc');
-                            const btn = document.querySelector('.add');
+                            const container = document.querySelector(".gall-load__wrap--type-clc");
+                            const url = "https://picsum.photos/600";
+                            var images = [];
+                            var page = 1;
+
+                            // OnScroll event (Taken from Florin Pop's Infinite Scroll - https://codepen.io/FlorinPop17/pen/RwwvKYJ)
 
 
-                            let currentimg = 2;
-                            function moreGall(rang){
+                            window.addEventListener("scroll", () => {
+                            const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
-                                for(let i = currentimg; i < currentimg + 2;i++){
-                                    const ImgUrl = imgArr[i];
-                                    const imaItemList = document.createElement('div');
-                                    imaItemList.classList.add('gall-item__wrap');
-                                    imaItemList.innerHTML = `<img src=${ImgUrl} onerror="this.style.display='none';" alt=''>`;
-                                    gallWrap.appendChild(imaItemList);
-                                }
-                                currentimg += 2;
-                                if(currentimg>=imgArr.length){
-                                   btn.style.display = 'none';
-                                }
+                            // console.log({ scrollTop, scrollHeight, clientHeight });
+
+                            if (clientHeight + scrollTop >= scrollHeight - 5) {
+                                loadImages(6);
                             }
-                            btn.addEventListener('click',moreGall);
+                            });
 
-                            moreGall(2);
+                            function loadImages(range) {
+                            for (let i = 0; i < range; i++) {
+                                const ImgUrl = imgArr[i];
+                                let image = document.createElement("div");
+                                image.classList.add("gall-item__wrap");
+
+                                image.innerHTML = `<img src=${ImgUrl} onerror="this.style.display='none';" alt=''>`;
+
+                                container.appendChild(image);
+                            }
+                            }
+
+                            loadImages(3);
+
+
                         })();
                     </script>
                 </div>
@@ -161,5 +204,5 @@
             COPYRIGHT 2022 YELLOW-FINGER. ALL RIGHTS RESERVED.
         </div>
     </div>
-</body>
+<script defer="defer" src="../main.js"></script></body>
 </html>
