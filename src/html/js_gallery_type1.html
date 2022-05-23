@@ -72,7 +72,7 @@
                             width: 100%;
                             display: grid;
                             grid-template-columns: repeat(2, 1fr);
-                            grid-gap: 10px;                          
+                            grid-gap: 10px;
                         }
                         .gall-item__wrap {
                             border-radius: 5px;
@@ -86,17 +86,17 @@
                                 border-radius: 5px;
                                 transition: 0.3s;
                                 cursor: pointer;
-                                box-shadow: 0px 6px 30px -9px rgba(0, 0, 0, 0.28);                                
+                                box-shadow: 0px 6px 30px -9px rgba(0, 0, 0, 0.28);
                         }
                         .gall-item__wrap img:hover {
                             filter: contrast(60%);
-                            transform: scale(1.02);                            
+                            transform: scale(1.02);
                         }
                     </style>
 
                     이미지를 가져다 배열에 담아 클릭할때마다 2개씩 로딩시킨다.<br><br>
 
-                    <div class="gall-load__wrap--type-clc">                        
+                    <div class="gall-load__wrap--type-clc">
                     </div>
                     <div style="text-align: center;padding: 50px 0;"><button type="button" class="btn-primary add">더보기</button></div>
                     <script>
@@ -128,32 +128,30 @@
                                 'https://cdn.pixabay.com/photo/2016/11/18/13/10/female-1834381__340.jpg',
                                 'https://cdn.pixabay.com/photo/2016/11/21/16/08/tying-hair-1846171__340.jpg'
                             ];
-                            
+
                             console.log(imgArr,imgArr.length);
-                            const btn = document.querySelector('.add');                            
-                            
+                            const btn = document.querySelector('.add');
+
                             const gallWrap = document.querySelector('.gall-load__wrap--type-clc');
 
                             let currentimg = 2;
                             btn.addEventListener('click',moreGall);
                             function moreGall(rang){
-                                var img = new Image();    
-                                
+
                                 for(let i = currentimg; i < currentimg + 2;i++){
-                                    const ImgUrl = imgArr[i];                                          
+                                    const ImgUrl = imgArr[i];
                                     const imaItemList = document.createElement('div');
                                     imaItemList.classList.add('gall-item__wrap');
-                                    console.log('이미지 갤러리 로딩',imaItemList,gallWrap,document.querySelector('.gall-load__wrap--type-clc'))
-                                    imaItemList.innerHTML = `<img src=${ImgUrl} alt=''>`;
+                                    imaItemList.innerHTML = `<img src=${ImgUrl} onerror="this.style.display='none';" alt=''>`;
                                     gallWrap.appendChild(imaItemList);
                                 }
                                 currentimg += 2;
                                 if(currentimg>=imgArr.length){
                                    btn.style.display = 'none';
                                 }
-                            }  
+                            }
                             moreGall(2);
-                        })();                       
+                        })();
                     </script>
                 </div>
             </div>
