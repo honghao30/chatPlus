@@ -53,7 +53,7 @@
         <div id="content">
             <div class="js-side">
                 <ul>
-                    <li><a href="../html/js_gallery_type1.html">갤러리(더보기 로딩)</a></li>
+                    <li class="is-active"><a href="../html/js_gallery_type1.html">갤러리(더보기 로딩)</a></li>
                     <li><a href="#">SWIPER SLIDER</a></li>
                     <li><a href="#">MODAL</a></li>
                     <li><a href="#">tab menu</a></li>
@@ -129,13 +129,11 @@
                                 'https://cdn.pixabay.com/photo/2016/11/21/16/08/tying-hair-1846171__340.jpg'
                             ];
 
-                            console.log(imgArr,imgArr.length);
+                            const gallWrap = document.querySelector('.gall-load__wrap--type-clc');
                             const btn = document.querySelector('.add');
 
-                            const gallWrap = document.querySelector('.gall-load__wrap--type-clc');
 
                             let currentimg = 2;
-                            btn.addEventListener('click',moreGall);
                             function moreGall(rang){
 
                                 for(let i = currentimg; i < currentimg + 2;i++){
@@ -150,6 +148,8 @@
                                    btn.style.display = 'none';
                                 }
                             }
+                            btn.addEventListener('click',moreGall);
+
                             moreGall(2);
                         })();
                     </script>
