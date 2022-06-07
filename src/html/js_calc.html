@@ -2,11 +2,11 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <title>웹접근성 | 퍼블리셔의 코드</title>
-<link href="../common.css" rel="stylesheet"></head>
+</head>
 <body class="no-visual">
     <div id="root">
         <div id="accessibility">
@@ -66,11 +66,60 @@
             </div>
             <div class="contents js-cont">
                 <div class="aem-content__section responr-wd">
-                    <div class="content__section--title size-middle">
-                        <h4>JS NAME </h4>
+                    <div class="content__section--title  size-middle">
+                        <h4>FAQ </h4>
                     </div>
-                    
+                    <style>
+                        .calc-wrap {width: 100%; background: #fff;border:2px solid #828284;border-radius: 6px;}
+                        .row-top {display: flex;justify-content: space-between;}
+                        .row-top input {width:90%;height:45px;border:0;font-size:16px;font-weight: bold;}
+                        .row-col {display: flex;justify-content: space-between;}
+                        .row-col button {width: calc((100% / 4) - 4px);margin:2px;height:50px;border:1px solid #ccc;  background: #ccc;border: 1px solid #6A6A6C;font-size: 20px;font-weight: bold;}
+                        .calc-wrap button:hover {opacity: .5;}
+                        .row-top button.history {width:8%;text-align: center;height:50px;}
 
+                    </style>
+
+                        <div class="calc-wrap">
+                            <div class="row-top">
+                                <input type="number" id="result">
+                                <button type="button" class="history">H</button>
+                            </div>
+                            <div class="row-col">
+                                <button type="button">%</button>
+                                <button type="button">C</button>
+                                <button type="button">del</button>
+                                <button type="button" data-type="operator">=</button>
+                            </div>
+                            <div class="row-col">
+                                <button type="button">7</button>
+                                <button type="button">8</button>
+                                <button type="button">9</button>
+                                <button type="button" data-type="operator">+</button>
+                            </div>
+                            <div class="row-col">
+                                <button type="button">4</button>
+                                <button type="button">5</button>
+                                <button type="button">6</button>
+                                <button type="button" data-type="operator">-</button>
+                            </div>
+                            <div class="row-col">
+                                <button type="button">3</button>
+                                <button type="button">2</button>
+                                <button type="button">1</button>
+                                <button type="button" data-type="operator">/</button>
+                            </div>
+                            <div class="row-col">
+                                <button type="button"></button>
+                                <button type="button">0</button>
+                                <button type="button">.</button>
+                                <button type="button" data-type="operator">X</button>
+                            </div>
+                        </div>
+                    <script>
+
+
+                    </script>
 
                 </div>
             </div>
@@ -79,5 +128,5 @@
             COPYRIGHT 2022 YELLOW-FINGER. ALL RIGHTS RESERVED.
         </div>
     </div>
-<script defer="defer" src="../main.js"></script></body>
+</body>
 </html>
