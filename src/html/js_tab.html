@@ -22,8 +22,7 @@
                         <div class="sub-nav__wrap">
                             <ul>
                                 <li><a href="../html/js_gallery_type1.html">갤러리(더보기 로딩)</a></li>
-                                <li><a href="../html/js_tab.html">탭 & 아코디언</a></li>
-                                <li><a href="../html/js_gallery_type1.html">갤러리(더보기 로딩)</a></li>
+                                <li><a href="../html/js_tab.html">탭 메뉴</a></li>
                                 <li><a href="../html/js_tab.html">모달 팝업</a></li>
                                 <li><a href="../html/js_tab.html">드랍다운박스</a></li>
                                 <li><a href="../html/js_tab.html">더보기</a></li>
@@ -58,7 +57,8 @@
                     <li><a href="js_gallery_type2.html">갤러리(스크롤 로딩)</a></li>
                     <li><a href="#">SWIPER SLIDER</a></li>
                     <li><a href="#">MODAL</a></li>
-                    <li><a href="#">tab menu</a></li>
+                    <li><a href="js_tab.html">tab menu</a></li>
+                    <li><a href="js_faq.html">faq</a></li>
                     <li><a href="#">Gallery</a></li>
                     <li><a href="#">scroll fixed menu</a></li>
                     <li><a href="#">scroll event</a></li>
@@ -67,140 +67,101 @@
             <div class="contents js-cont">
                 <div class="aem-content__section responr-wd">
                     <div class="content__section--title  size-middle">
-                        <h4>FAQ </h4>
+                        <h4>tab menu </h4>
                     </div>
                     <style>
-                        .accordion {
-                        max-width: 90vw;
-                        margin: 0 auto;
+                       .tab__wrap {
+                           width:100%;
                         }
-                        .accordion .title {
-                        padding: 20px;
-                        background-color: #37434b;
-                        color:#fff;
+                        .tab-head {
+                            position: relative;
+                        }
+                        .tab-head .tab-list {
+                            display: flex;
 
                         }
-                        .accordion .title button {color:#fff;display: block;width:100%;text-align: left;}
-                        .accordion .title.active + .acc-content {
-                        max-height: 500px;
-                        padding-top: 20px;
-                        padding-bottom: 20px;
+                        .tab-head .tab-list li.is-active button {
+                            font-weight: bold;
+                            color:rebeccapurple;
+                            border-bottom: 1px solid #f2f2f2;
                         }
-                        .accordion .title.is-active + .acc-content {
-                        max-height: 500px;
-                        padding-top: 20px;
-                        padding-bottom: 20px;
+                        .tab-head .tab-list.alc-center {
+                            justify-content: center;
                         }
-                        .accordion .acc-content {
-                        max-height: 0;
-                        padding: 0 20px;
-                        border: 1px solid #aaa;
-                        border-top: 0;
-                        overflow: hidden;
-                        transition: max-height 0.3s, padding 0.3s;
+                        .tab-head .tab-list button {
+                            font-size:16px;
+                            padding:20px 30px;
+                        }
+                        .tab-panel__wrap {
+                            width:100%;
+                        }
+                        .tab-panel {
+                            display: none;
+                            background-color: aqua;
+                            min-height: 500px;
+                        }
+                        .tab-panel.is-active {
+                            display: block;
                         }
                     </style>
+                        <div class="tab__wrap">
+                            <div class="tab-head">
+                                <ul class="tab-list alc-center">
+                                    <li class="is-active"><button type="button" title="현재 선택됨">탭메뉴1</button></li>
+                                    <li><button type="button">탭메뉴2</button></li>
+                                    <li><button type="button">탭메뉴3</button></li>                                
+                                </ul>
+                            </div>
 
-                        <dl class="accordion">
-                            <dt class="title">
-                                <button type="button">아코디언 제목 FAQ 제목입니다.</button>
-                            </dt>
-                            <dd class="acc-content is-active">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </dd>
-                            <dt class="title">
-                                <button type="button">아코디언 제목 FAQ 제목입니다.</button>
-                            </dt>
-                            <dd class="acc-content">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </dd>
-                            <dt class="title">
-                                <button type="button">아코디언 제목 FAQ 제목입니다.</button>
-                            </dt>
-                            <dd class="acc-content">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </dd>
-                            <dt class="title">
-                                <button type="button">아코디언 제목 FAQ 제목입니다.</button>
-                            </dt>
-                            <dd class="acc-content">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </dd>
-                            <dt class="title">
-                                <button type="button">아코디언 제목 FAQ 제목입니다.</button>
-                            </dt>
-                            <dd class="acc-content">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </dd>
-                        </dl>
-<br><br>
-                        <dl class="accordion">
-                            <dt class="title">
-                                <button type="button">아코디언 제목 FAQ 제목입니다.</button>
-                            </dt>
-                            <dd class="acc-content is-active">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </dd>
-                            <dt class="title">
-                                <button type="button">아코디언 제목 FAQ 제목입니다.</button>
-                            </dt>
-                            <dd class="acc-content">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </dd>
-                            <dt class="title">
-                                <button type="button">아코디언 제목 FAQ 제목입니다.</button>
-                            </dt>
-                            <dd class="acc-content">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </dd>
-                            <dt class="title">
-                                <button type="button">아코디언 제목 FAQ 제목입니다.</button>
-                            </dt>
-                            <dd class="acc-content">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </dd>
-                            <dt class="title">
-                                <button type="button">아코디언 제목 FAQ 제목입니다.</button>
-                            </dt>
-                            <dd class="acc-content">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </dd>
-                        </dl>
+                            <div class="tab-panel is-active">
+                                1
+                            </div>
+                            <div class="tab-panel">
+                                2
+                            </div>
+                            <div class="tab-panel">
+                                3
+                            </div>
+
+                        </div>
+                       
                     <script>
-                        class Accordion {
-                        constructor(heading) {
-                            this.heading = heading;
-                        }
-
-                        showOne() {
-                            const accordionHeading = document.querySelectorAll(this.heading);
-
-                            accordionHeading.forEach((item, key) => {
-                                    item.addEventListener('click', () => {
-                                        if (item.classList.contains("is-active")) {
-                                            item.classList.remove("is-active");
-                                        } else {
-                                            const accordionTitlesWithIsOpen = document.querySelectorAll(".accordion > .is-active");
-                                            accordionTitlesWithIsOpen.forEach((accordionTitleWithIsOpen) => {
-                                                accordionTitleWithIsOpen.classList.remove("is-active");
-                                            });
-                                            item.classList.add("is-active");
-                                        }
+                       function tabNavItem() {
+                        const tabLink = '.tab-list li button';
+                        const tabLinkTrigers = document.querySelectorAll(tabLink);
+                        const tabNavPanels = document.querySelectorAll('.tab-panel');
+                        if(tabLinkTrigers) {
+                            tabLinkTrigers.forEach(function(tabLinkTriger, index){
+                                tabLinkTriger.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    let _target = this.closest('.tab-list');
+                                    let _targetLinks = _target.querySelectorAll(tabLink);
+                                    _targetLinks.forEach(function(_targetLink) {
+                                        _targetLink.parentNode.classList.remove('is-active');
+                                        _targetLink.removeAttribute('title');
                                     });
-                                });
-                            }
-                        }
-                        const accordion = new Accordion('.title');
-                        // for open every use showAll();
-                        accordion.showOne();
+                                    tabLinkTriger.parentNode.classList.add('is-active');
+                                    tabLinkTriger.setAttribute('title', '선택됨');
 
+                                    // tabNavPanel 있는 경우
+                                    if(tabNavPanels.length>0) {
+                                        tabNavPanels.forEach(function(tabNavPanel) {
+                                            tabNavPanel.classList.remove('is-active');
+                                        });
+                                        tabNavPanels[index].classList.add('is-active');
+                                    }
+                                });
+                            });
+                        }
+                    }
+                    tabNavItem();
                     </script>
 
                 </div>
             </div>
        </div>
         <div class="footer">
-            COPYRIGHT 2022 YELLOW-FINGER. ALL RIGHTS RESERVED.
+            COPYRIGHT 2022. ALL RIGHTS RESERVED.
         </div>
     </div>
 </body>
