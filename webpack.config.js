@@ -62,6 +62,14 @@ module.exports = {
       filename: './html/wa_tip.html',
     }),
     new HtmlWebpackPlugin({
+      template: "./src/html/js_calc.html",
+      inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/js_calc.html',
+    }),
+    new HtmlWebpackPlugin({
       template: "./src/html/js_tab.html",
       inject: 'body',
       minify: {
@@ -76,7 +84,7 @@ module.exports = {
         collapseWhitespace: false
       },
       filename: './html/js_gallery_type1.html',
-    }),    
+    }),
     new HtmlWebpackPlugin({
       template: "./src/html/js_gallery_type2.html",
       inject: 'body',
@@ -84,7 +92,7 @@ module.exports = {
         collapseWhitespace: false
       },
       filename: './html/js_gallery_type2.html',
-    }),     
+    }), 
     new HtmlWebpackPlugin({
       template: "./src/html/js_faq.html",
       inject: 'body',
