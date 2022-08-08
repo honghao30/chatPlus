@@ -1670,9 +1670,11 @@ xmp {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
     &.day1 {
       background: url('https://raw.githubusercontent.com/honghao30/mycode/main/media/day1.jpg') no-repeat;
-      background-size: 100% auto;
+
     }
     &.day2 {
       background: url('https://raw.githubusercontent.com/honghao30/mycode/main/media/day2.jpg') no-repeat;
@@ -1685,7 +1687,7 @@ xmp {
     &.day4 {
       background: url('https://raw.githubusercontent.com/honghao30/mycode/main/media/day4.jpg') no-repeat;
       background-size: 100% auto;
-    }           
+    }
     .today-weather__wrap {
       width:100%;
       max-width:600px;
@@ -1712,7 +1714,11 @@ xmp {
         margin-top:8px;
         .temperatureText {
           font-size:30px;
+          text-align: center;
         }
+      }
+      .temperatureIcon {
+        text-align: center;
       }
       .temperature {
         font-size:50px;
