@@ -1659,3 +1659,73 @@ xmp {
       }
   }
 }
+
+
+
+/* 메인 인트로 화면 */
+.main-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+    &.day1 {
+      background: url('https://raw.githubusercontent.com/honghao30/mycode/main/media/day1.jpg') no-repeat;
+      background-size: 100% auto;
+    }
+    &.day2 {
+      background: url('https://raw.githubusercontent.com/honghao30/mycode/main/media/day2.jpg') no-repeat;
+      background-size: 100% auto;
+    }
+    &.day3 {
+      background: url('https://raw.githubusercontent.com/honghao30/mycode/main/media/day3.jpg') no-repeat;
+      background-size: 100% auto;
+    }
+    &.day4 {
+      background: url('https://raw.githubusercontent.com/honghao30/mycode/main/media/day4.jpg') no-repeat;
+      background-size: 100% auto;
+    }           
+    .today-weather__wrap {
+      width:100%;
+      max-width:600px;
+      background-color: rgba(0, 0, 0, 0.7);
+      margin: 0 auto;
+      padding:30px;
+      box-shadow: rgba(255, 255, 255, 0.5);
+      border-radius: 15px;
+      color:#fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .citis-tit {
+        font-size: 45px;
+      }
+      .wheather-info {
+        margin-top:10px;
+        .data {
+          font-size:20px;
+          text-align: center;
+        }
+      }
+      .wheather-info1 {
+        margin-top:8px;
+        .temperatureText {
+          font-size:30px;
+        }
+      }
+      .temperature {
+        font-size:50px;
+        padding:10px 0;
+      }
+    }
+    .whear-infor2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      font-size:20px;
+      > div {
+        margin:0 20px;
+      }
+    }
+}

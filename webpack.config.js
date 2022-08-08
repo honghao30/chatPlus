@@ -92,7 +92,15 @@ module.exports = {
         collapseWhitespace: false
       },
       filename: './html/js_gallery_type2.html',
-    }),
+    }), 
+    new HtmlWebpackPlugin({
+      template: "./src/html/js_faq.html",
+      inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/js_faq.html',
+    }), 
     new MiniCssExtractPlugin({
       filename: "common.css",
     }),
