@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+    <title>JAVASCRIPT | 퍼블리셔의 코드</title>
+<link href="../common.css" rel="stylesheet"></head>
+<body class="no-visual">
+    <div id="root">
+        <div id="accessibility">
+            <a href="#gnb">주 메뉴 바로가기</a>
+            <a href="#content">본문 바로가기</a>
+        </div>
+        <div class="header">
+            <h1><a href="/" title="메인 페이지">My code</a></h1>
+            <nav class="gnb__list--wrap" id="gnb">
+                <ul class="gnb__list">
+                    <li class="gnbitem"><a href="../html/markup_roll.html">마크업 컨벤션</a></li>
+                    <li class="gnbitem"><a href="#" class="hasDepth">소스 자료실</a>
+                        <div class="sub-nav__wrap">
+                            <ul>
+                                <li><a href="../html/js_gallery_type1.html">갤러리(더보기 로딩)</a></li>
+                                <li><a href="../html/js_tab.html">탭 메뉴</a></li>
+                                <li><a href="../html/js_tab.html">모달 팝업</a></li>
+                                <li><a href="../html/js_tab.html">드랍다운박스</a></li>
+                                <li><a href="../html/js_tab.html">더보기</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnbitem"><a href="#" class="hasDepth">웹접근성</a>
+                        <div class="sub-nav__wrap">
+                            <ul>
+                                <li><a href="../html/wa.html">접근성 팁</a></li>
+                                <li><a href="../html/wa_tip.html">WA ARIA</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnbitem"><a href="mailto:hnky2006@naver.com">프로젝트 문의</a></li>
+                    <li class="gnbitem"><a href="https://pubwork.tistory.com/" target="blank" title="새창 열림">블로그</a></li>
+                </ul>
+            </nav>
+            <button type="button" class="mobile-menu">
+                <span class="ir-text">모바일 메뉴 열기</span>
+                <span class="bar top"></span>
+                <span class="bar bottom"></span>
+            </button>
+        </div>
+        <div class="sub-key-visual">
+           JAVASCRIPT
+        </div>
+        <div id="content">
+            <div class="js-side">
+                <ul>
+                    <li><a href="js_gallery_type1.html">갤러리(스크롤 로딩)</a></li>
+                    <li class="is-active"><a href="js_gallery_type2.html">갤러리(스크롤 로딩)</a></li>
+                    <li><a href="#">SWIPER SLIDER</a></li>
+                    <li><a href="#">MODAL</a></li>
+                    <li><a href="js_tab.html">tab menu</a></li>
+                    <li><a href="js_faq.html">faq</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">scroll fixed menu</a></li>
+                    <li><a href="#">scroll event</a></li>
+                </ul>
+            </div>
+            <div class="contents js-cont">
+                <div class="aem-content__section responr-wd">
+                    <div class="content__section--title size-middle">
+                        <h4>갤러리(더보기 로딩)</h4>
+                    </div>
+                    <style>
+                        .loading {
+                        border-radius: 50%;
+                        width: 50px;
+                        height: 50px;
+                        border: 2px solid transparent;
+                        animation: rotate 1.5s ease-in infinite;
+                        border-top-color: #ff7f50;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 1rem auto;
+
+                        }
+                        .child-1 {
+                            border-radius: 50%;
+                            width: 40px;
+                            height: 40px;
+                            border: 2px solid transparent;
+                            animation: rotate 1.5s ease-in infinite;
+                            border-bottom-color: #ff7f50;
+                            transition: 2s all;
+                        }
+                        @keyframes rotate {
+                        to {
+                            transform: rotate(360deg);
+                        }
+                        }
+
+
+
+                        .gall-load__wrap--type-clc {
+                            width: 100%;
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            grid-gap: 10px;
+                        }
+                        .gall-item__wrap {
+                            border-radius: 5px;
+                            padding: 0;
+                            border: none;
+                            transition: 0.3s;
+                        }
+                        .gall-item__wrap img {
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 5px;
+                                transition: 0.3s;
+                                cursor: pointer;
+                                box-shadow: 0px 6px 30px -9px rgba(0, 0, 0, 0.28);
+                        }
+                        .gall-item__wrap img:hover {
+                            filter: contrast(60%);
+                            transform: scale(1.02);
+                        }
+
+                    </style>
+
+                    이미지를 가져다 배열에 담아 스크롤에 따라 3개씩 로딩시킨다.<br><br>
+
+                    <div class="gall-load__wrap--type-clc">
+                    </div>
+                    
+                    <script>
+                        (() => {
+                            const imgArr = [
+                                'https://cdn.pixabay.com/photo/2015/01/07/15/51/woman-591576__340.jpg',
+                                'https://cdn.pixabay.com/photo/2015/07/09/00/29/woman-837156__340.jpg',
+                                'https://cdn.pixabay.com/photo/2016/11/14/05/29/girl-1822702__340.jpg',
+                                'https://cdn.pixabay.com/photo/2017/01/23/19/40/woman-2003647__340.jpg',
+                                'https://cdn.pixabay.com/photo/2017/03/30/18/17/girl-2189247__340.jpg',
+                                'https://cdn.pixabay.com/photo/2018/01/13/19/39/fashion-3080644__340.jpg',
+                                'https://cdn.pixabay.com/photo/2016/04/26/22/31/bride-1355473__340.jpg',
+                                'https://cdn.pixabay.com/photo/2016/02/24/08/31/girl-1219339__340.jpg',
+                                'https://cdn.pixabay.com/photo/2018/05/22/14/00/girl-3421489__340.jpg',
+                                'https://cdn.pixabay.com/photo/2016/11/22/22/25/abs-1850926__340.jpg',
+                                'https://cdn.pixabay.com/photo/2016/11/29/11/12/rain-1869119__340.jpg',
+                                'https://cdn.pixabay.com/photo/2013/03/29/07/34/girl-97433__340.jpg',
+                                'https://cdn.pixabay.com/photo/2020/12/03/20/25/girl-5801502__340.jpg',
+                                'https://cdn.pixabay.com/photo/2015/03/05/19/18/woman-660806__340.jpg',
+                                'https://cdn.pixabay.com/photo/2016/03/15/17/17/girl-1258739__340.jpg',
+                                'https://cdn.pixabay.com/photo/2016/05/03/16/10/morning-1369446__340.jpg',
+                                'https://cdn.pixabay.com/photo/2016/11/21/18/26/woman-1847044__340.jpg',
+                                'https://cdn.pixabay.com/photo/2016/11/29/12/34/girl-1869532__340.jpg',
+                                'https://cdn.pixabay.com/photo/2017/10/19/18/26/woman-2868727__340.jpg',
+                                'https://cdn.pixabay.com/photo/2018/02/06/14/07/ease-3134828__340.jpg',
+                                'https://cdn.pixabay.com/photo/2016/03/22/12/32/girl-1272781__340.jpg',
+                                'https://cdn.pixabay.com/photo/2016/11/29/12/34/woman-1869534__340.jpg',
+                                'https://cdn.pixabay.com/photo/2014/08/20/18/04/asian-422700__340.jpg',
+                                'https://cdn.pixabay.com/photo/2016/11/18/13/10/female-1834381__340.jpg',
+                                'https://cdn.pixabay.com/photo/2016/11/21/16/08/tying-hair-1846171__340.jpg'
+                            ];
+
+                            const container = document.querySelector(".gall-load__wrap--type-clc");
+                            const url = "https://picsum.photos/600";
+                            var images = [];
+                            var page = 1;
+
+                            // OnScroll event (Taken from Florin Pop's Infinite Scroll - https://codepen.io/FlorinPop17/pen/RwwvKYJ)
+
+
+                            window.addEventListener("scroll", () => {
+                            const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+                            // console.log({ scrollTop, scrollHeight, clientHeight });
+
+                            if (clientHeight + scrollTop >= scrollHeight - 5) {
+                                loadImages(6);
+                            }
+                            });
+
+                            function loadImages(range) {
+                            for (let i = 0; i < range; i++) {
+                                const ImgUrl = imgArr[i];
+                                let image = document.createElement("div");
+                                image.classList.add("gall-item__wrap");
+
+                                image.innerHTML = `<img src=${ImgUrl} onerror="this.style.display='none';" alt=''>`;
+
+                                container.appendChild(image);
+                            }
+                            }
+
+                            loadImages(3);
+
+
+                        })();
+                    </script>
+                </div>
+            </div>
+       </div>
+        <div class="footer">
+            COPYRIGHT 2022. ALL RIGHTS RESERVED.
+        </div>
+    </div>
+<script defer="defer" src="../main.js"></script></body>
+</html>

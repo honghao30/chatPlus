@@ -1676,22 +1676,31 @@ xmp {
       width:100%;
       max-width:600px;
       background-color: rgba(0, 0, 0, 0.7);
-      margin: 0 auto;
+      margin: 0 auto 50px;
       padding:30px;
-      box-shadow: rgba(255, 255, 255, 0.5);
+      box-shadow: rgba(0, 255, 255, 0.5);
       border-radius: 15px;
       color:#fff;
       display: flex;
       flex-direction: column;
       align-items: center;
+      @media #{$phone}{
+        max-width: 90%;
+      }
       .citis-tit {
         font-size: 45px;
+        @media #{$phone}{
+          font-size: 35px;
+        }
       }
       .wheather-info {
         margin-top:10px;
         .data {
           font-size:20px;
           text-align: center;
+          @media #{$phone}{
+            font-size: 16px;
+          }          
         }
       }
       .wheather-info1 {
@@ -1710,6 +1719,9 @@ xmp {
       .temperature {
         font-size:50px;
         padding:10px 0;
+        @media #{$phone}{
+          font-size: 35px;
+        }
       }
     }
     .whear-infor2 {
@@ -1717,8 +1729,22 @@ xmp {
       align-items: center;
       justify-content: space-around;
       font-size:20px;
+      @media #{$phone}{
+        font-size: 16px;
+      }           
       > div {
         margin:0 20px;
       }
     }
+}
+.btn-area__wrap--middle {
+  margin:20px 0;
+}
+.btn-default {
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  border:1px solid $polar-white;
+  color:$polar-white;
+  font-size:16px;
+  padding:10px 20px;
 }
