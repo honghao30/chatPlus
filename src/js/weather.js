@@ -42,31 +42,42 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=Seoul,kr&APPID=13b55b2b
     let wheaterInfoText = document.querySelector('.temperatureText');
     wheaterInfoText.innerText = weatherDescKo[weathercod];
 
+    const rainDay = [200,201,202,210,211,212,221,230,231,232,300,301,302,310,311,313,314,321,500,501,502,503,504,511,520,521,522,531];
+    const cloudDay = [721,731,741,804,802];
+
     //배경 설정하기
     if(hours >= 5 && hours <= 8){
-        if(weathercod == 200 || weathercod == 201 ||  weathercod == 202 ||  weathercod == 210 ||  weathercod == 211 ||  weathercod == 212){
-            document.querySelector('.main-wrap').style.backgroundImage  = 'url(https://raw.githubusercontent.com/honghao30/mycode/main/media/day5.jpg)';
+        if(rainDay.includes(weathercod)){
+            document.querySelector('.main-wrap').style.backgroundImage  = 'url(https://raw.githubusercontent.com/honghao30/mycode/main/media/day13.jpg)';
+        }else if(cloudDay.includes(weathercod)){
+            document.querySelector('.main-wrap').style.backgroundImage  = 'url(https://raw.githubusercontent.com/honghao30/mycode/main/media/day12.jpg)';
         }else {
             document.querySelector('.main-wrap').style.backgroundImage  = 'url(https://raw.githubusercontent.com/honghao30/mycode/main/media/day1.jpg)';
             console.log(hours)
         }
-    } else if(hours >= 9 && hours <= 15){
-        if(weathercod == 200 || weathercod == 201 ||  weathercod == 202 ||  weathercod == 210 ||  weathercod == 211 ||  weathercod == 212){
-            document.querySelector('.main-wrap').style.backgroundImage  = 'url(https://raw.githubusercontent.com/honghao30/mycode/main/media/day5.jpg)';
+    } else if(hours >= 9 && hours <= 16){
+        if(rainDay.includes(weathercod)){
+            document.querySelector('.main-wrap').style.backgroundImage  = 'url(https://raw.githubusercontent.com/honghao30/mycode/main/media/day13.jpg)';
+        }else if(cloudDay.includes(weathercod)){
+            document.querySelector('.main-wrap').style.backgroundImage  = 'url(https://raw.githubusercontent.com/honghao30/mycode/main/media/day12.jpg)';
         }else {
             document.querySelector('.main-wrap').style.backgroundImage  = 'url(https://raw.githubusercontent.com/honghao30/mycode/main/media/day2.jpg)';
             console.log(hours)
         }
-    }else if(hours >= 16 && hours <= 18){
-        if(weathercod == 200 || weathercod == 201 ||  weathercod == 202 ||  weathercod == 210 ||  weathercod == 211 ||  weathercod == 212){
-            document.querySelector('.main-wrap').style.backgroundImage  = 'url(https://raw.githubusercontent.com/honghao30/mycode/main/media/day5.jpg)';
+    }else if(hours >= 15 && hours <= 18){
+        if(rainDay.includes(weathercod)){
+            document.querySelector('.main-wrap').style.backgroundImage  = 'url(https://raw.githubusercontent.com/honghao30/mycode/main/media/day13.jpg)';
+        }else if(cloudDay.includes(weathercod)){
+            document.querySelector('.main-wrap').style.backgroundImage  = 'url(https://raw.githubusercontent.com/honghao30/mycode/main/media/day12.jpg)';
         }else {
             document.querySelector('.main-wrap').style.backgroundImage  = 'url(https://raw.githubusercontent.com/honghao30/mycode/main/media/day3.jpg)';
             console.log(hours)
         }
     }else{
-        if(weathercod == 200 || weathercod == 201 ||  weathercod == 202 ||  weathercod == 210 ||  weathercod == 211 ||  weathercod == 212){
+        if(rainDay.includes(weathercod)){
             document.querySelector('.main-wrap').style.backgroundImage  = 'url(https://raw.githubusercontent.com/honghao30/mycode/main/media/day6.jpg)';
+        }else if(cloudDay.includes(weathercod)){
+            document.querySelector('.main-wrap').style.backgroundImage  = 'url(https://raw.githubusercontent.com/honghao30/mycode/main/media/day9.jpg)';
         }else {
             document.querySelector('.main-wrap').style.backgroundImage  = 'url(https://raw.githubusercontent.com/honghao30/mycode/main/media/day4.jpg)';
             console.log(hours)

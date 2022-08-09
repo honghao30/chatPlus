@@ -1670,24 +1670,8 @@ xmp {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-    &.day1 {
-      background: url('https://raw.githubusercontent.com/honghao30/mycode/main/media/day1.jpg') no-repeat;
-
-    }
-    &.day2 {
-      background: url('https://raw.githubusercontent.com/honghao30/mycode/main/media/day2.jpg') no-repeat;
-      background-size: 100% auto;
-    }
-    &.day3 {
-      background: url('https://raw.githubusercontent.com/honghao30/mycode/main/media/day3.jpg') no-repeat;
-      background-size: 100% auto;
-    }
-    &.day4 {
-      background: url('https://raw.githubusercontent.com/honghao30/mycode/main/media/day4.jpg') no-repeat;
-      background-size: 100% auto;
-    }
+  background-size: cover;
+  background-repeat: no-repeat;   
     .today-weather__wrap {
       width:100%;
       max-width:600px;
@@ -1712,6 +1696,9 @@ xmp {
       }
       .wheather-info1 {
         margin-top:8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         .temperatureText {
           font-size:30px;
           text-align: center;
