@@ -1748,3 +1748,115 @@ xmp {
   font-size:16px;
   padding:10px 20px;
 }
+
+//행운카드 보기
+.welcom-card__wrap {
+  position:relative;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  width:100%;
+  max-width:950px;
+  margin:0 auto;
+  
+  .card__item--wrap {
+    position:relative;
+    width:100%;
+    height:500px;
+    perspective: 300px;    
+    .card-item {      
+      width:100%;
+      height:100%;
+      text-align:center;  
+      border:1px solid #ccc;
+      backface-visibility: hidden;
+      transition: 1s;  
+      color:#fff;
+      font-size:18px;
+      cursor:pointer;
+      .card-item__innerbox {
+        position:relative;
+        height:100%;
+        width:100%;
+        span {
+          position:absolute;
+          left:50%;
+          top:50%;
+          transform: translate(-50%, -50%);
+          strong {
+            font-size:26px;
+          }
+        }
+      }
+      &.front {
+      position:absolute;
+      left:0;
+      top:0;    
+      transform: rotateY(0deg);  
+        &.one-card {
+          background:#7543e2;
+        }
+        &.two-card {
+          background:#e27543;
+        }     
+        &.theree-card {
+          background:#43e275;
+        }            
+    }
+      &.backface {
+        position:absolute;
+        left:0;
+        top:0; 
+        background:#1d1138;
+        transform: rotateY(-180deg);
+      }    
+    }
+    &.is-active {
+      .front {
+        transform: rotateY(180deg); 
+      }
+      .backface {
+        transform: rotateY(0deg); 
+      }      
+    }
+  }
+  &.is-end {
+    .front {
+      opacity:0.5;
+      cursor:default;
+    }
+  }
+}
+
+.modal-popup {
+  position:fixed;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  background:#fff;
+  border:1px solid #ccc;
+  width: 350px;
+  padding: 20px 0px;
+  display:none;
+  &.is-open {
+    display:block;
+  }
+  .text {
+    text-align:center;
+    font-size:16px;
+    padding:20px;
+    color:#000;
+    line-height:1.6;
+  }
+  .button-wrap {
+    text-align:center;
+    .btn-list {
+      display:inline-block;
+      text-decoration:none;
+      border:1px solid #ccc;
+      padding:10px 15px;
+      font-size:15px;
+      color:#000;
+    }
+  }
+}
