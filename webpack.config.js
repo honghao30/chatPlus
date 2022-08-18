@@ -92,7 +92,15 @@ module.exports = {
         collapseWhitespace: false
       },
       filename: './html/js_gallery_type2.html',
-    }), 
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/html/side-nav.html",
+      //inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/side-nav.html',
+    }),
     new HtmlWebpackPlugin({
       template: "./src/html/js_faq.html",
       inject: 'body',
@@ -100,7 +108,15 @@ module.exports = {
         collapseWhitespace: false
       },
       filename: './html/js_faq.html',
-    }), 
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/html/js-gate.html",
+      inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/js-gate.html',
+    }),
     new MiniCssExtractPlugin({
       filename: "common.css",
     }),
