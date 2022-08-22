@@ -1671,7 +1671,7 @@ xmp {
   justify-content: center;
   flex-direction: column;
   background-size: cover;
-  background-repeat: no-repeat;   
+  background-repeat: no-repeat;
     .today-weather__wrap {
       width:100%;
       max-width:600px;
@@ -1700,7 +1700,7 @@ xmp {
           text-align: center;
           @media #{$phone}{
             font-size: 16px;
-          }          
+          }
         }
       }
       .wheather-info1 {
@@ -1731,7 +1731,7 @@ xmp {
       font-size:20px;
       @media #{$phone}{
         font-size: 16px;
-      }           
+      }
       > div {
         margin:0 20px;
       }
@@ -1758,19 +1758,19 @@ xmp {
   width:100%;
   max-width:950px;
   margin:0 auto;
-  
+
   .card__item--wrap {
     position:relative;
     width:100%;
     height:500px;
-    perspective: 300px;    
-    .card-item {      
+    perspective: 300px;
+    .card-item {
       width:100%;
       height:100%;
-      text-align:center;  
+      text-align:center;
       border:1px solid #ccc;
       backface-visibility: hidden;
-      transition: 1s;  
+      transition: 1s;
       color:#fff;
       font-size:18px;
       cursor:pointer;
@@ -1791,33 +1791,33 @@ xmp {
       &.front {
       position:absolute;
       left:0;
-      top:0;    
-      transform: rotateY(0deg);  
+      top:0;
+      transform: rotateY(0deg);
         &.one-card {
           background:#7543e2;
         }
         &.two-card {
           background:#e27543;
-        }     
+        }
         &.theree-card {
           background:#43e275;
-        }            
+        }
     }
       &.backface {
         position:absolute;
         left:0;
-        top:0; 
+        top:0;
         background:#1d1138;
         transform: rotateY(-180deg);
-      }    
+      }
     }
     &.is-active {
       .front {
-        transform: rotateY(180deg); 
+        transform: rotateY(180deg);
       }
       .backface {
-        transform: rotateY(0deg); 
-      }      
+        transform: rotateY(0deg);
+      }
     }
   }
   &.is-end {
@@ -1857,6 +1857,54 @@ xmp {
       padding:10px 15px;
       font-size:15px;
       color:#000;
+    }
+  }
+}
+
+// 레이아웃
+.content__wrap {
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+  .side-nav {
+    width: 100%;
+    max-width:350px;
+    flex:1;
+    padding: 50px 40px;
+    background-color: #333;
+    color: #9b9b9b;
+    .side-logo {
+      padding-bottom:20px;
+      font-size:20px;
+      color:#fff;
+      border-bottom: 1px solid #5e5e5e;
+    }
+    ul {
+      padding:30px 0;
+    }
+    li {
+      padding:4px 0;
+      a {
+        color: #969696;
+        font-size:13px;
+      }
+      &.is-active {
+        a,
+        a[target=_blank] {
+          color: #ebebeb;
+        }
+      }
+    }
+  }
+  .content__wrap--section {
+    width:calc(100% - 350px);
+    .blog-wrap {
+      display: block;
+      width:100%;
+      max-width: 1000px;
+      margin-right: auto;
+      margin-left: auto;
+      min-height: 600px;
     }
   }
 }
