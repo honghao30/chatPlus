@@ -5,5 +5,5 @@ import "./style.scss";
 import "./Swiper.js";
 import "./js/stand.js";
 //import "./js/scroll_ani";
-//import "./js/weather.js";
+import "./js/weather_cmp.js";
 //import "./luckycard";
