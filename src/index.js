@@ -6,4 +6,4 @@ import "./Swiper.js";
 import "./js/stand.js";
 //import "./js/scroll_ani";
 import "./js/weather_cmp.js";
-//import "./luckycard";
+import "./js/luckycard.js";

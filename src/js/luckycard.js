@@ -39,11 +39,15 @@ function golink(e){
   location.href="http://www.daum.net";  
 }
 
+const luckyBtn = document.querySelector('.btn-lucky-card');
 
+if(luckyBtn){
+  luckyBtn.addEventListener('click',viewLuckyCard);
+}
 
-
-
-
-
+function viewLuckyCard() {
+  const luckyBox = document.querySelector('.card-option__wrap');
+  luckyBox.style.display = 'block';
+}
 
 
