@@ -1914,6 +1914,9 @@ xmp {
   }
   .content__wrap--section {
     width:calc(100% - 350px);
+    @media #{$phone}{
+      width:100%;
+    }
     .blog-wrap {
       display: block;
       width:100%;
@@ -1921,6 +1924,10 @@ xmp {
       margin-right: auto;
       margin-left: auto;
       min-height: 600px;
+      padding:80px 0;
+      h2 {
+        font-size: 28px;
+      }
     }
   }
 }

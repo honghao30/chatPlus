@@ -117,6 +117,14 @@ module.exports = {
       },
       filename: './html/js-gate.html',
     }),
+    new HtmlWebpackPlugin({
+      template: "./src/html/gallery01.html",
+      inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/gallery01.html',
+    }),
     new MiniCssExtractPlugin({
       filename: "common.css",
     }),
