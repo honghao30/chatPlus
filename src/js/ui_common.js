@@ -63,7 +63,7 @@
 
 //selector set
 
-//common ui
+//common ui @INCLUDE common
 window.addEventListener('load', function() {
     var allElements = document.getElementsByTagName('*');
     Array.prototype.forEach.call(allElements, function(el) {
@@ -80,3 +80,13 @@ window.addEventListener('load', function() {
         }
     });
 });
+
+
+window.addEventListener("DOMContentLoaded",activeLi);
+//LNB ACTIVE
+function activeLi(){
+    const contWrap = document.querySelector('#content');
+    const lnbItems = document.querySelectorAll('.lnblist li');
+    const contId = contWrap.getAttribute('data-id');
+    console.log(lnbItems,contId)
+}

@@ -38,30 +38,6 @@ module.exports = {
       filename: './index.html',
     }),
     new HtmlWebpackPlugin({
-      template: "./src/html/markup_roll.html",
-      inject: 'body',
-      minify: {
-        collapseWhitespace: false
-      },
-      filename: './html/markup_roll.html',
-    }),
-    new HtmlWebpackPlugin({
-      template: "./src/html/wa.html",
-      inject: 'body',
-      minify: {
-        collapseWhitespace: false
-      },
-      filename: './html/wa.html',
-    }),
-    new HtmlWebpackPlugin({
-      template: "./src/html/wa_tip.html",
-      inject: 'body',
-      minify: {
-        collapseWhitespace: false
-      },
-      filename: './html/wa_tip.html',
-    }),
-    new HtmlWebpackPlugin({
       template: "./src/html/js_calc.html",
       inject: 'body',
       minify: {
@@ -77,14 +53,7 @@ module.exports = {
       },
       filename: './html/js_tab.html',
     }),
-    new HtmlWebpackPlugin({
-      template: "./src/html/js_gallery_type1.html",
-      inject: 'body',
-      minify: {
-        collapseWhitespace: false
-      },
-      filename: './html/js_gallery_type1.html',
-    }),
+
     new HtmlWebpackPlugin({
       template: "./src/html/js_gallery_type2.html",
       inject: 'body',
