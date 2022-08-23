@@ -1750,6 +1750,18 @@ xmp {
 }
 
 //행운카드 보기
+.card-option__wrap {
+  display: none;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  &.is-active {
+    display: block;
+  }
+}
 .welcom-card__wrap {
   position:relative;
   display:grid;
@@ -1757,12 +1769,12 @@ xmp {
   grid-gap: 20px;
   width:100%;
   max-width:950px;
-  margin:0 auto;
+  margin:150px auto;
 
   .card__item--wrap {
     position:relative;
     width:100%;
-    height:500px;
+    height:450px;
     perspective: 300px;
     .card-item {
       width:100%;
@@ -1850,8 +1862,12 @@ xmp {
   }
   .button-wrap {
     text-align:center;
+    display: flex;
+    flex-wrap: wrap;
+    gap:5px;
+    padding:20px;
     .btn-list {
-      display:inline-block;
+      flex:auto;
       text-decoration:none;
       border:1px solid #ccc;
       padding:10px 15px;
