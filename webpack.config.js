@@ -94,6 +94,16 @@ module.exports = {
       },
       filename: './html/gallery01.html',
     }),
+    new HtmlWebpackPlugin({
+      template: "./src/html/js_tabtype1.html",
+      inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/js_tabtype1.html',
+    }),
+
+
     new MiniCssExtractPlugin({
       filename: "common.css",
     }),
