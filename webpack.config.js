@@ -102,7 +102,14 @@ module.exports = {
       },
       filename: './html/js_tabtype1.html',
     }),
-
+    new HtmlWebpackPlugin({
+      template: "./src/html/lunch-menu.html",
+      inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/lunch-menu.html',
+    }),
 
     new MiniCssExtractPlugin({
       filename: "common.css",
