@@ -8,3 +8,4 @@ import "./Swiper.js";
 import "./js/ui_common.js"
 import "./js/weather_cmp.js";
 import "./js/luckycard.js";
+import "./js/lnb.js";
