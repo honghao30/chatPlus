@@ -50,14 +50,28 @@
 
 
             const _this = config.element;
+            let resultHtml = ``;
+            // menuli.innerHTML = `
+            // <a href="#" >메뉴명</a>
+            // `;
+            //const menuli = document.createElement('li');
+            for(let i = 0;i < Linklist.length;i++){
+                resultHtml += `
+                    <li>
+                        <a href="${Linklist[i].link}" target="${Linklist[i].target}" data-id="${Linklist[i].dataid}">${Linklist[i].name}</a>
+                    </li>
+                `;
+            }
 
-
-            const menuli = document.createElement('li');
-            menuli.innerHTML = `
-                <a href="#" >메뉴명</a>
-            `;
-            _this.querySelector('.lmuenu').appendChild(menuli);
-            console.log(Linklist[0].name,Linklist[0].link,Linklist[0].dataid,menuli,_this.querySelector('.lmuenu'))
+            // Linklist.forEach(function(item,key){
+            //     console.log(item,key);
+            //     menuli.innerHTML = `
+            //     <a href="#" >메뉴명</a>
+            //     `;
+            // })
+            _this.querySelector('.lmuenu').innerHTML = resultHtml;
+            //_this.querySelector('.lmuenu').appendChild(resultHtml);
+            console.log(_this.querySelector('.lmuenu'))
 
             if (console && console.log) {
                 console.log(
