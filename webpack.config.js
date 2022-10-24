@@ -103,6 +103,14 @@ module.exports = {
       filename: './html/js_tabtype1.html',
     }),
     new HtmlWebpackPlugin({
+      template: "./src/html/byte_check.html",
+      inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/byte_check.html',
+    }),    
+    new HtmlWebpackPlugin({
       template: "./src/html/lunch-menu.html",
       inject: 'body',
       minify: {
