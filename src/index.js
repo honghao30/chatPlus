@@ -9,3 +9,6 @@ import "./js/ui_common.js"
 import "./js/weather_cmp.js";
 import "./js/luckycard.js";
 import "./js/lnb.js";
+import "./js/byte_check.js";
+
+

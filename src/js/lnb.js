@@ -38,7 +38,12 @@
                     name : "tab menu",
                     link : "js_tabtype1.html",
                     dataid: 3
-                }
+                },
+                {
+                    name : "폼 체크",
+                    link : "byte_check.html",
+                    dataid: 4
+                }                
             ];
             const minigame = [
                 {
