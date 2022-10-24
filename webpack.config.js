@@ -111,12 +111,20 @@ module.exports = {
       filename: './html/byte_check.html',
     }),    
     new HtmlWebpackPlugin({
-      template: "./src/html/lunch-menu.html",
+      template: "./src/html/vechle_number_check.html",
       inject: 'body',
       minify: {
         collapseWhitespace: false
       },
-      filename: './html/lunch-menu.html',
+      filename: './html/vechle_number_check.html',
+    }),       
+    new HtmlWebpackPlugin({
+      template: "./src/html/lunch_menu.html",
+      inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/lunch_menu.html',
     }),
 
     new MiniCssExtractPlugin({
