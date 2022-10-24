@@ -1,3 +1,5 @@
+// 스크롤 모션 애플 타입
+
 (() => {
 
 	let yOffset = 0; // window.pageYOffset 대신 쓸 변수

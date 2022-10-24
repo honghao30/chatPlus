@@ -43,12 +43,18 @@
                     name : "폼 체크",
                     link : "byte_check.html",
                     dataid: 4
-                }                
+                },     
+                {
+                    name : "번호판 체크",
+                    link : "vechle_number_check.html",
+                    dataid: 5
+                }  
             ];
             const minigame = [
                 {
-                    name : "점심메뉴",
-                    link : "lunch-menu.html",
+                    name : "점심 머 먹어?",
+                    link : "lunch_menu.html",
+                    target : "_blank"
                 },
             ];
             config.element.removeAttribute("data-cmp-is");
@@ -56,10 +62,6 @@
 
             const _this = config.element;
             let resultHtml = ``;
-            // menuli.innerHTML = `
-            // <a href="#" >메뉴명</a>
-            // `;
-            //const menuli = document.createElement('li');
             for(let i = 0;i < Linklist.length;i++){
                 resultHtml += `
                     <li>
@@ -68,15 +70,18 @@
                 `;
             }
 
-            // Linklist.forEach(function(item,key){
-            //     console.log(item,key);
-            //     menuli.innerHTML = `
-            //     <a href="#" >메뉴명</a>
-            //     `;
-            // })
             _this.querySelector('.lmuenu').innerHTML = resultHtml;
-            //_this.querySelector('.lmuenu').appendChild(resultHtml);
-            console.log(_this.querySelector('.lmuenu'))
+            
+            let resultHtml2 = ``;
+            for(let i = 0;i < minigame.length;i++){
+                resultHtml2 += `
+                    <li>
+                        <a href="${minigame[i].link}" target="${minigame[i].target}" data-id="${minigame[i].dataid}">${minigame[i].name}</a>
+                    </li>
+                `;
+            }
+
+            _this.querySelector('.minigame').innerHTML = resultHtml2;            
 
             if (console && console.log) {
                 console.log(
