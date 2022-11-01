@@ -48,7 +48,17 @@
                     name : "번호판 체크",
                     link : "vechle_number_check.html",
                     dataid: 5
-                }  
+                },  
+                {
+                    name : "모달창",
+                    link : "modal_pupop.html",
+                    dataid: 6
+                },
+                {
+                    name : "모달창 class",
+                    link : "modal_pupop2.html",
+                    dataid: 7
+                }                                    
             ];
             const minigame = [
                 {

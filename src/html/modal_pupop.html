@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <title>My code</title>
+</head>
+<body>
+    <div id="root">
+        <div id="accessibility">
+            <a href="#gnb">주 메뉴 바로가기</a>
+            <a href="#content">본문 바로가기</a>
+        </div>
+        <div id="content" data-id="1">
+            <div class="content__wrap">
+                <div class="side-nav" data-cmp-is="lnb">
+                    <div class="side-logo"><h1><a href="/" title="메인 페이지">My code</a></h1></div>
+                    <ul  class="lnblist lmuenu">
+                    </ul>
+                    <h2>미니게임</h2>
+                    <ul class="lnblist minigame">
+                    </ul>
+                </div>
+                <div class="content__wrap--section">
+                    <div class="blog-wrap">
+                        <h2>모달창</h2>
+                        <div class="blog-wrap__section">
+                            <style>
+                               .modal_test_wrap {width:90%;margin: 0 auto;}
+                               .btn-modal {display: block;margin-bottom:20px;width:200px;height:50px;
+                                text-align: center;background-color: blueviolet;color:#fff;}
+                                .modal__wrap {display:none;position: fixed;background-color: rgba(0,0,0,0.6);width:100%;left:0;height:100%;top:0;z-index:2;}
+                                .modal__wrap.is-active {display: block;}
+                                .modal-popup__wrap {display:none;position: fixed;left:50%;top:50%;transform: translate(-50%,-50%); width:60%;height:500px;background:#fff;z-index: 5;}
+                                .modal-popup__wrap.is-active {display: block;}
+                                .btn-close-modal {margin:0 auto;height:50px;width: 200px;background-color: blue;color:#fff;font-size:16px;text-align: center;}
+                            </style>
+
+                            <div style="padding:20px;border:1px solid #ccc;">
+                                
+                            </div>
+                            <div class="modal_test_wrap">
+                                <button type="button" class="btn-modal modal-open" data-modal="modal-test1">모달창1</button>                                
+                                <button type="button" class="btn-modal modal-open" data-modal="modal-test2">모달창2(타켓지정)</button>
+                                <button type="button" class="btn-modal modal-open" data-modal="modal-test3">html파일 모달</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            COPYRIGHT 2022. ALL RIGHTS RESERVED.
+        </div>
+    </div>
+<!-- //모달 -->
+<div class="modal__wrap" id="modal-test1">
+    <div class="modal-popup__wrap">
+        <div class="modal-header">모달 헤더</div>
+        <div class="modal-cont">
+            모달내용
+        </div>
+        <button type="button" class="btn-close-modal">닫기</button>
+    </div>
+</div>
+<!-- //모달 -->
+<div class="modal__wrap" id="modal-test2">
+    <div class="modal-popup__wrap">
+        <div class="modal-header">모달 헤더</div>
+        <div class="modal-cont">
+            모달내용
+        </div>
+        <button type="button" class="btn-close-modal">닫기</button>
+    </div>
+</div>
+</body>
+</html>
