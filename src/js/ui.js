@@ -159,14 +159,47 @@ class Modal {
 }
 
 new Modal();
-
-
-
-
 //modal type2
 //콤보박스
+class dropdown {
+	constructor(){
+		this.dropButtons = document.querySelectorAll( '.drop-button' );
+		this.dropDownList = document.querySelectorAll( '.drop-list__wrap');
 
+		this.listeners();
+	}
+	listeners() {
+		window.addEventListener( 'keydown', this.keyDown );
 
+		this.dropButtons.forEach( el => {
+			el.addEventListener( 'click', this.openDropdown, false );
+		} );
+
+		this.dropDownList.forEach( el => {
+			el.addEventListener( 'click', this.backdropClose, false );
+		} );
+
+	}
+	openDropdown( el ) {
+		
+		el.target.classList.toggle('is-active')
+		el.target.nextElementSibling.classList.toggle( 'is-active' );
+		el.target.parentElement.classList.toggle( 'is-active' );
+		
+	}
+	keyDown( e ) {
+		if ( 27 === e.keyCode) {
+			dropdown.hideDropdown();
+		}
+	}
+	static hideDropdown() {		
+		let activeDroper = document.querySelector( '.drop-list__wrap.is-active');
+		if(activeDroper){
+			activeDroper.classList.remove('is-active');
+		}
+	}
+}
+new dropdown();
 ///콤보박스-----
 
 

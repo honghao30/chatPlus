@@ -58,7 +58,17 @@
                     name : "모달창 class",
                     link : "modal_pupop2.html",
                     dataid: 7
-                }                                    
+                },
+                {
+                    name : "드랍다운",
+                    link : "dropdown.html",
+                    dataid: 8
+                }, 
+                {
+                    name : "드랍다운2",
+                    link : "dropdown2.html",
+                    dataid: 9
+                },                                                                      
             ];
             const minigame = [
                 {
