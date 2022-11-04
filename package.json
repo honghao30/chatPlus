@@ -34,6 +34,6 @@
   },
   "dependencies": {
     "html-webpack-plugin": "^5.3.2",
-    "swiper": "^8.1.4"
+    "swiper": "^8.4.4"
   }
 }
