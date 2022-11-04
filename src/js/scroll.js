@@ -44,9 +44,13 @@ function scrollEventManage(){
     const header = document.querySelector(".header");
     const keyvisual = document.querySelector(".key-visual");
 
+
     if (Yoffset > lastScrollTop){
         // downscroll code
-        header.classList.remove('fixed');
+        if(header){
+            header.classList.remove('fixed');
+        }        
+        
         console.log('내려가나');
 
     } else {

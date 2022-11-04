@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <title>My code</title>
+</head>
+<body>
+    <div id="root">
+        <div id="accessibility">
+            <a href="#gnb">주 메뉴 바로가기</a>
+            <a href="#content">본문 바로가기</a>
+        </div>
+        <div id="content" data-id="1">
+            <div class="content__wrap">
+                <div class="side-nav" data-cmp-is="lnb">
+                    <div class="side-logo"><h1><a href="/" title="메인 페이지">My code</a></h1></div>
+                    <ul  class="lnblist lmuenu">
+                    </ul>
+                    <h2>미니게임</h2>
+                    <ul class="lnblist minigame">
+                    </ul>
+                </div>
+                <div class="content__wrap--section">
+                    <div class="blog-wrap">
+                        <h2>비디오 제어</h2>
+                        <div class="blog-wrap__section">
+                            <style>
+                                .section-video1 {width:100%;}
+                                .swiper-slide img {width: 100%;}
+                                .swiper-slide video {width: 100%;}
+                            </style>
+
+                            <h3>1. 스크롤시 재생 정지</h3>
+                            <div class="section-video1">
+                                    <div style="height:300px;background:pink;">
+                                    </div>
+                                    <div style="height:400px;background:red;">
+                                    </div>                                
+                                    <div class='hasvide' style="padding:50px 0;text-align: center;">
+                                        <div class="video-cmp" data-cmp-is="vidoe-cmp">
+                                            <video controls width="500" height="500" muted>                                  
+                                                <source src="https://www.w3schools.com/html/movie.mp4"
+                                                        type="video/mp4"> 
+                                            </video>  
+                                            <button type="button" class="btn-play-video">재생</button>                                  
+                                            <button type="button" class="btn-pause-video">정지</button>  
+                                        </div>                                
+                                    </div>  
+                                    <div style="height:400px;background:#fff;">
+                                    </div>                                                               
+                            </div>
+                            <h3>2.스와이프내에서 재생 정지</h3>
+                            <div style="height:400px;background:red;">
+                            </div>  
+                            <div class="swipercmp-area" style="padding:80px 0;">
+                                <!-- swiper -->
+                                <div class="swiper">
+                                    <!-- Additional required wrapper -->
+                                    <div class="swiper-wrapper">
+                                        <!-- Slides -->
+                                        <div class="swiper-slide"><img src="https://cdn.pixabay.com/photo/2016/11/14/05/29/girl-1822702__340.jpg" alt=""></div>
+                                        <div class="swiper-slide">
+                                            <div class="vidoe-wrap">
+                                                <video controls width="500" height="500" muted>                                  
+                                                    <source src="https://www.w3schools.com/html/movie.mp4"
+                                                            type="video/mp4">                                    
+                                
+                                                </video>  
+                                                <button type="button" class="btnplay">재생</button>                                  
+                                                <button type="button" class="btnstop">정지</button>                                                   
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide"><img src="https://cdn.pixabay.com/photo/2016/11/14/05/29/girl-1822702__340.jpg" alt=""></div>
+                                        ...
+                                    </div>
+                                    <!-- If we need pagination -->
+                                    <div class="swiper-pagination"></div>
+                                    
+                                    <!-- If we need navigation buttons -->
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                    
+                                    <!-- If we need scrollbar -->
+                                    <div class="swiper-scrollbar"></div>
+                                </div>
+
+                                <!-- //swiper -->
+                            </div>
+                            <div style="height:400px;background:#fff;">
+                            </div>                               
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            COPYRIGHT 2022. ALL RIGHTS RESERVED.
+        </div>
+    </div>
+</body>
+</html>

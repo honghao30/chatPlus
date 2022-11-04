@@ -12,3 +12,4 @@ import "./js/lnb.js";
 import "./js/byte_check.js";
 import "./js/number_check.js";
 import "./js/lunch_menu.js";
+import "./js/video.js";

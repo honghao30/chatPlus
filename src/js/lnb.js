@@ -68,7 +68,12 @@
                     name : "드랍다운2",
                     link : "dropdown2.html",
                     dataid: 9
-                },                                                                      
+                },      
+                {
+                    name : "비디오 제어",
+                    link : "videocont.html",
+                    dataid: 10
+                },                                                                                  
             ];
             const minigame = [
                 {
