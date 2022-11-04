@@ -117,7 +117,47 @@ module.exports = {
         collapseWhitespace: false
       },
       filename: './html/vechle_number_check.html',
-    }),       
+    }),     
+    new HtmlWebpackPlugin({
+      template: "./src/html/modal_pupop.html",
+      inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/modal_pupop.html',
+    }),     
+    new HtmlWebpackPlugin({
+      template: "./src/html/modal_pupop2.html",
+      inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/modal_pupop2.html',
+    }),     
+    new HtmlWebpackPlugin({
+      template: "./src/html/dropdown.html",
+      inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/dropdown.html',
+    }),  
+    new HtmlWebpackPlugin({
+      template: "./src/html/dropdown2.html",
+      inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/dropdown2.html',
+    }),     
+    new HtmlWebpackPlugin({
+      template: "./src/html/videocont.html",
+      inject: 'body',
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/videocont.html',
+    }),             
     new HtmlWebpackPlugin({
       template: "./src/html/lunch_menu.html",
       inject: 'body',
