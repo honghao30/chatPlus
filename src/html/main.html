@@ -8,6 +8,22 @@
     <title>메인</title>
 </head>
 <body>
+    <div id="header"></div>
     메인
+    <script>
+        window.addEventListener('load', function(){
+            fetch('./common/header.html')
+            .then(function(res){                
+                res.text().then(function(html){
+                    const html_dom = new DOMParser().parseFromString(html,'text/html');
+                    console.log(res, html_dom)
+                     const header = document.querySelector('#header');
+                    // var body = document.querySelector('body');
+                    header.innerHTML(html_dom);                                
+                })
+            })
+            .catch(error => console.log(error))                      
+        });
+    </script>
 </body>
 </html>

@@ -38,6 +38,13 @@ module.exports = {
       filename: './index.html',
     }),
     new HtmlWebpackPlugin({
+      template: "./src/html/common/header.html",
+      minify: {
+        collapseWhitespace: false
+      },
+      filename: './html/common/header.html',
+    }),    
+    new HtmlWebpackPlugin({
       template: "./src/html/main.html",
       inject: 'body',
       minify: {
